@@ -1,0 +1,54 @@
+.dropdown-menu {
+    display: none;
+  }
+.container {
+  font-family: arial;
+  font-size: 24px;
+  width: 500px;
+  height: 500px;
+  outline: solid 3px rgb(43, 43, 44);
+  border-radius: 0%;
+  margin-top: 150px;
+  background-color: white;
+}
+.body1{
+    background-color: #403d3d;
+    
+}
+.topbar{
+  height: 100px;
+
+}
+.box1{
+  display:inline-flex;
+  width:40%;
+  padding-left: 15px;
+  padding-top: 30px;
+  .btn-dark{
+   
+    width:100px;
+  }
+
+}
+
+.box2{
+  display:inline-flex;
+  width:auto;
+  padding-top: 10px;
+   
+}
+.box3{
+  .btn-dark{
+    
+    width:100%;
+    }
+}
+.mb-3{
+  padding-top: 30px;
+}
+.form-control{
+  background-color: rgb(227, 227, 227)  ;
+}
+.form-label{
+  font-size: 18px;
+}
