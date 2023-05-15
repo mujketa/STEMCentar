@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Montserrat";
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Montserrat";
+}
+h3{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+h2{
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+p{
+    color: #8f8f8f;
+}
+/* headings*/
+.welcome{
+    font-family: 'Montserrat';  
+    font-size: 3rem;  line-height: 1.5;  
+    font-weight: 900;
+} 
+#title{
+    background-color: #1D267D;
+    color: #fff;
+}
+.container-fluid{
+    padding: 3% 15% 7%;
+}
+
+/* Navbar*/
+
+.navbar-brand{
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.navbar{
+    padding: 0 0 4.5rem;
+}
+.some{
+    padding-bottom: 5em;
+}
+.nav-item{
+    padding: 0 18px;
+}
+.nav-link{
+    font-size: 1.2rem;
+}
+.navbar-nav{
+    align-items: flex-end;
+}
+
+
+/* VisitButton */
+
+.visit-button{
+    /* malo da odmaknem buttone od texta i slike */
+    margin: 5% 3% 5% 0%;
+}
+
+/* Title image */
+.title-image{
+    width: 80%;
+    position: absolute;
+    right: -30%;
+    bottom: -4rem;
+}
+.add-button{
+    margin-top: 2rem;
+}
+
+/* Food section */
+#foods-row{
+    /* top bottom i left right */
+    padding: 5% 15%; 
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* visit section */
+
+#visit{
+    background-color: #1D267D;
+    color: #fff;
+    padding: 7% 15%;
+    text-align: center;
+}
+.visit-heading{
+    font-family: "Montserrat";
+    font-size: 3.5rem;
+    line-height: 1.5; 
+}
+/* footer section */
+#footer{
+    padding: 7% 15%;
+    text-align: center;
+}
+.social-icon{
+    margin:20px 10px;
+}
+/* add food button */
+.center {
+    margin-top: 5%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hideform {
+    display: none;
+}
+
+/* responsive */
+ 
+
+@media (max-width: 1028px){
+    #title{
+        text-align: center;
+    }
+    .title-image{
+        position: static;
+        margin-top: 2rem;
+        margin-left: 7rem;
+    }
+    .center{
+        text-align: center;
+        margin-left: 6rem;
+    }
+    #foods-row{
+        /* top bottom i left right */
+        padding: 5% 15%; 
+    }
+}
+
+
+
+
