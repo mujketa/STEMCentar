@@ -36,14 +36,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#title">Home</a>
+                    <a class="nav-link" href="#title">Pocetna</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#foods">Menu</a>
+                    <a class="nav-link" href="#foods">O nama</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#visit">Location</a>
+                    <a class="nav-link" href="#visit">Kursevi</a>
                 </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#visit">Edukacije</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#visit">Lokacija</a>
+          </li>
             </ul>
         </div>
         </nav>
@@ -66,7 +72,7 @@
 
        <!-- Forma za POST -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <div class="center hideform col-lg-5 col-sm-9">
+      <div class="center  col-lg-5 col-sm-9">
           <button id="close" type="button" class="btn-close" style="float: right;" aria-label="Close"></button>
           <form action="/action_page.php">
             <div class="mb-3">
@@ -74,16 +80,16 @@
                 <input type="text" class="form-control" id="food--id" required>
               </div>
             <div class="mb-3">
-              <label for="food-name" class="col-form-label">Name:</label>
+              <label for="food-name" class="col-form-label">Naslov:</label>
               <input type="text" class="form-control" id="food--name" required>
             </div>
             <div class="mb-3">
-              <label for="food-image" class="col-form-label">Image:</label>
+              <label for="food-image" class="col-form-label">Slika:</label>
               <input type="text" class="form-control" id="food--image" required>
             </div>
             <div class="mb-3">
-                <label for="food-price" class="col-form-label">Price:</label>
-                <input type="number" class="form-control" id="food--price" required>
+                <label for="food-price" class="col-form-label">Tekst:</label>
+                <input type="text" class="form-control" id="food--price" required>
               </div>
           </form>
           <div class="modal-footer">
