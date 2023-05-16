@@ -61,7 +61,7 @@
             
           <div class="col-lg-6">
             <h1 class="welcome">Dobrodošli u STEM centar</h1>
-            <button id="show" type="button" class="btn btn-outline-light btn-lg add-button">Dodaj vijest</button>
+            <!-- <button id="show" type="button" class="btn btn-outline-light btn-lg add-button">Dodaj vijest</button> -->
           </div>
     
         <div id="img" class="col-lg-4 col-md-9">
@@ -70,7 +70,7 @@
     
       </div>
 
-       <!-- Forma za POST -->
+       <!-- Forma za POST
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <div class="center  col-lg-5 col-sm-9">
           <button id="close" type="button" class="btn-close" style="float: right;" aria-label="Close"></button>
@@ -95,15 +95,15 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-light" onclick="addFood()">Submit</button>
           </div>
-      </div>
+      </div> -->
     </div>
       </section>
       
-    <!-- foods -->
+    <!-- foods
           <div  id="foods-row">  
           </div>
      
-    <!--MODAL -->
+    MODAL 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -138,24 +138,136 @@
       </div>
     </div>
   </div>
+</section> -->
+
+<!-- Offers section -->
+
+<section id="offers">
+  <h3 class="offers-heading">Šta nudimo?</h3>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/edukacije.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">STEM edukacija</h5>
+          <p class="card-text">Naše STEM edukacije su interaktivnog tipa tako da će svaki polaznik imati priliku da pokaže svoja znanja i vještine, te dodatno unaprijedi iste.</p>
+          <a href="#" class="btn-more">Vidi više</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/robotika.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Robotika i programiranje</h5>
+          <p class="card-text">Kroz učenje principa programiranja podstiče se radoznalost, logika, kreativnost, rješavanje problema, sistematsko i analitičko razmišljanje, pravljenje sistema iz pojedinačnih dijelova.</p>
+          <a href="#" class="btn-more">Vidi više</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/ucenje.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Učenje i širenje naučenog</h5>
+          <p class="card-text">Interaktivni tip radionica potiče samopouzdanje i slobodu izražavanja misli i ideja te proaktivan stav pri traženju rješenja.</p>
+          <a href="#" class="btn-more">Vidi više</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+
 <!-- Visit us section -->
 
 <section id="visit">
-  <h3 class="visit-heading">Visit us on this location </h3>
+  <div class="visit-background">
+  <h3 class="visit-heading">Posjeti nas na ovoj lokaciji</h3>
   <a href="https://goo.gl/maps/hRKoVRRhmH7rfLJy8">
     <button class="visit-button btn btn-outline-light" type="button"><i class="fa-solid fa-location-dot"></i> STEMCentar</button>
  </a>
+</div>
 </section>
 
+<!-- Application section-->
+
+<div class="form-body">
+  <div class="row">
+      <div class="form-holder">
+          <div class="form-content">
+              <div class="form-items">
+                  <h3>Prijavi se</h3>
+                  <p>Popuni podatke ispod</p>
+                  <form class="requires-validation" novalidate>
+
+                      <div class="col-md-12">
+                         <input class="form-control" type="text" name="name" placeholder="Ime i prezime" required>
+                         <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                      </div>
+
+                      <div class="col-md-12">
+                          <input class="form-control" type="email" name="email" placeholder="E-mail adresa" required>
+                           <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <input class="form-control" type="phone" name="phone" placeholder="Broj telefona" required>
+                         <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                    </div>
+
+                     <div class="col-md-12">
+                          <select class="form-select mt-3" required>
+                                <option selected disabled value="">Kursevi</option>
+                                <option value="prog">Programiranje</option>
+                                <option value="robo">Robotika</option>
+                                <option value="elekto">Elektronika</option>
+                                <option value="grafik">Grafički dizajn</option>
+                                <option value="mat">Kreativna matematika</option>
+                                <option value="fizik">Kreativna fizika</option>
+                                <option value="hemi">Kreativna hemija</option>
+                         </select>
+                          <div class="invalid-feedback">Molimo odaberite kurs!</div>
+                     </div>
+
+                     <div class="col-md-12 mt-3">
+                      <label class="mb-3 mr-1" for="age">Uzrast: </label>
+
+                      <input type="radio" class="btn-check" name="age" id="male" autocomplete="off" required>
+                      <label class="btn btn-sm btn-outline-secondary" for="male">do 12 godina</label>
+
+                      <input type="radio" class="btn-check" name="age" id="female" autocomplete="off" required>
+                      <label class="btn btn-sm btn-outline-secondary" for="female">12-18 godina</label>
+
+                      <input type="radio" class="btn-check" name="age" id="secret" autocomplete="off" required>
+                      <label class="btn btn-sm btn-outline-secondary" for="secret">preko 18 godina</label>
+                          <div class="invalid-feedback mv-up">Molimo odaberite uzrast!</div>
+                      </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label">Potvrđujem da su svi podaci tačni</label>
+                   <div class="invalid-feedback">Molimo potvrdite da su svi podaci tačni!</div>
+                  </div>
+            
+
+                      <div class="form-button mt-3">
+                          <button id="submit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Prijavi se</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
 <!-- Footer -->
 
-<footer id="footer">
+<!-- <footer id="footer">
     <i class="social-icon fab fa-facebook"></i>
     <i class="social-icon fab fa-instagram"></i>
-  <p>© foodShop Copyright 2022 </p>
-</footer>
+</footer> -->
 
 </body>
 
