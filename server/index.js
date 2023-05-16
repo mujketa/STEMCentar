@@ -1,14 +1,15 @@
 const express = require ("express");
 const app = express();
 const bodyParser = require ("body-parser");
+const mysql = require ("mysql2");
 const cors = require ("cors");
 
-// const db = mysql.createPool({
-//     host: "localhost",
-//     user: "root",
-//     password: "mujketa7265",
-//     database: "db_zalihe224"
-// });
+const db = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "mujketa7265",
+    database: "stemcentar"
+});
 
 app.use(cors());
 app.use(express.json());
@@ -19,10 +20,24 @@ app.use((req,res,next)=>{
   
   })
 
-
-app.get("/", (req, res) => {
-    res.send("Hello");
+  app.get("/api/get", (req, res) => {
+    const sqlGet = "SELECT * FROM vijesti_db";
+    db.query(sqlGet, (error, result) =>{
+        res.send(result);
+    })
 })
+
+
+  app.get("/", (req, res) =>{
+    const sqlInsert = "INSERT INTO vijesti_db(naslov, slika, tekst) VALUES ('Stem centar organizuje praksu', 'wwww.sdfsdfdsdf.gffdgfd', 'fdgfgfdgfddfgdfgdfgfdgfdgdffdgdffdgfdgfdgdfgfdgdfg')";
+    db.query(sqlInsert, (error, result) =>{
+        console.log("error", error);
+        console.log("result", result);
+        res.status(200).json("uspjesno spremljeno u bazu");
+    })
+})
+
+
     
 
 
