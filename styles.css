@@ -266,6 +266,35 @@ p{
   color: #ff606e;
 }
 
+#carouselExampleDark {
+    width: 100%; /* Adjust the width as desired */
+    height: 600px; /* Adjust the height as desired */
+  }
+  
+.carousel-item img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  } 
+  /*Animirani text*/
+  .welcome::after {
+    content: "|"; /* Initial cursor */
+    opacity: 1;
+    animation: typing 0.7s infinite;
+  }
+  
+  @keyframes typing {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
 /* responsive */
  
 
@@ -286,6 +315,7 @@ p{
         /* top bottom i left right */
         padding: 5% 15%; 
     }
+  
 }
 
 
