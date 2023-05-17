@@ -24,8 +24,8 @@
 
     <section id="title">
 
-        <div class="container-fluid">
-    
+        <div class="container-fluid" >
+      
           <!-- Navbar -->
           <div class="some">
           <nav class="navbar navbar-expand-lg navbar-dark">
@@ -60,10 +60,44 @@
         <div class="row">
             
           <div class="col-lg-6">
-            <h1 class="welcome">Dobrodošli u STEM centar</h1>
+            <h1 class="typing-text">
+              
+            </h1>
             <!-- <button id="show" type="button" class="btn btn-outline-light btn-lg add-button">Dodaj vijest</button> -->
           </div>
-    
+<script>
+const textElement = document.querySelector('.typing-text');
+const texts = ['STEM CENTAR', 'UZ STEM RASTEM!', '']; // Array of texts to display
+
+let textIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < texts[textIndex].length) {
+    textElement.textContent += texts[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 50); // Adjust the typing speed as desired
+  } else {
+    setTimeout(erase, 1000); // Delay before erasing the text
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    textElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 30); // Adjust the erasing speed as desired
+  } else {
+    textIndex++;
+    if (textIndex >= texts.length) {
+      textIndex = 0;
+    }
+    setTimeout(type, 500); // Delay before typing the next text
+  }
+}
+// Start the animation
+type();
+</script>
         <div id="img" class="col-lg-4 col-md-9">
           <img class="title-image" src="images/logo.png" alt="STEMlogo">
         </div>

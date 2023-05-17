@@ -24,13 +24,10 @@ p{
     color: #8f8f8f;
 }
 /* headings*/
-.welcome{
-    font-family: 'Montserrat';  
-    font-size: 3rem;  line-height: 1.5;  
-    font-weight: 900;
-} 
+
 #title{
-    background-color: #040505;
+    
+    background-image: url(/images/pozadina1.png);
     color: #fff;
     padding-bottom: 11%;
 }
@@ -277,23 +274,34 @@ p{
     object-fit: cover;
   } 
   /*Animirani text*/
-  .welcome::after {
-    content: "|"; /* Initial cursor */
-    opacity: 1;
-    animation: typing 0.7s infinite;
+  .typing-text {
+    font-family: 'Montserrat';  
+    font-size: 3rem;  line-height: 1.5;  
+    font-weight: 900;
+    overflow: show; /* Hide overflowing text */
+    border-right: 0.15em solid #000; /* Cursor styling */
+  white-space: nowrap; /* Prevent line breaks */
+  margin: 0 auto; /* Center the text */
+  letter-spacing: 0.15em; /* Adjust letter spacing */
+  animation:
+    typing 3s steps(40, end),
+
+}
+
+@keyframes typing {
+  from {
+    width: 0; /* Start with no width */
+  }
+  to {
+    width: 100%; /* Gradually expand the width */
+  }
+}
+
+  .col-lg-6{
+    height:100px;
+    width:600px;
   }
   
-  @keyframes typing {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
   
 /* responsive */
  
