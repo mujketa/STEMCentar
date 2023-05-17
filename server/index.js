@@ -27,6 +27,40 @@ app.use((req,res,next)=>{
     })
 })
 
+app.post("/api/post", (req, res) =>{
+    const {naslov, slika, tekst} = req.body;
+    const sqlInsert = "INSERT INTO vijesti_db (naslov, slika, tekst) VALUES (?, ?, ?)";
+    db.query(sqlInsert, [naslov, slika, tekst], (error, result) =>{
+        if (error) {
+            console.log(error);
+        }
+    })
+
+})
+
+app.delete("/api/remove/:id", (req, res) =>{
+    const {id} = req.params;
+    const sqlRemove = "DELETE from vijesti_db where id_vijesti = ?"
+    db.query(sqlRemove, id, (error, result) =>{
+        if (error) {
+            console.log(error);
+        }
+    })
+
+})
+
+app.put("/api/update/:id", (req, res) => {
+    const{id}=req.params;
+    const {naslov, slika, tekst} = req.body;
+    const sqlUpdate = "UPDATE vijesti_db SET naslov = ?, slika = ?, tekst = ? WHERE id_vijesti = ?";
+    db.query(sqlUpdate, [naslov, slika, tekst, id],  (error, result) =>{
+        if(error){
+            console.log(error);
+        }
+        res.send(result);
+    })  
+})
+
 
   app.get("/", (req, res) =>{
     const sqlInsert = "INSERT INTO vijesti_db(naslov, slika, tekst) VALUES ('Stem centar organizuje praksu', 'wwww.sdfsdfdsdf.gffdgfd', 'fdgfgfdgfddfgdfgdfgfdgfdgdffdgdffdgfdgfdgdfgfdgdfg')";
