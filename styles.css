@@ -150,7 +150,7 @@ p{
 }
 
 .form-body{
-    background-color: #040505;
+    background-image:url(images/pozadinaflipped.png);
 }
 
 .form-holder {
@@ -179,7 +179,7 @@ p{
 
 .form-content .form-items {
   border: 3px solid #fff;
-  padding: 40px;
+  padding: 0px;
   display: inline-block;
   width: 100%;
   min-width: 540px;
