@@ -27,7 +27,7 @@ p{
 
 #title{
     
-    background-image: url(/images/pozadina1.png);
+    background-image: url(/images/pozadina.png);
     color: #fff;
     padding-bottom: 11%;
 }
@@ -262,17 +262,18 @@ p{
 .invalid-feedback{
   color: #ff606e;
 }
+#carouselExampleRide{
+    margin: 0 auto;
+    max-width: 800px;
+    padding:0;  
+    overflow:visible;
+}
 
-#carouselExampleDark {
-    width: 100%; /* Adjust the width as desired */
-    height: 600px; /* Adjust the height as desired */
-  }
-  
-.carousel-item img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-  } 
+.carousel-item{
+    overflow:visible;
+    transition: 0.4s !important;
+}
+
   /*Animirani text*/
   .typing-text {
     font-family: 'Montserrat';  
