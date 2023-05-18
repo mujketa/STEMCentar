@@ -20,6 +20,12 @@ h2{
     font-size: 3rem;
     line-height: 1.5;
 }
+.slide{
+  font-weight: bold;
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 3px 5px 2px black;
+}
 p{
     color: #8f8f8f;
 }
