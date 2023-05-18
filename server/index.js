@@ -1,4 +1,4 @@
-const express = require ("express");
+const express = require('express');
 const app = express();
 const bodyParser = require ("body-parser");
 const mysql = require ("mysql2");
@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use((req,res,next)=>{
     console.log(req.path,req.method);
     next();  
-  
   })
+
 
   app.get("/api/get", (req, res) => {
     const sqlGet = "SELECT * FROM vijesti_db";
@@ -27,16 +27,39 @@ app.use((req,res,next)=>{
     })
 })
 
-app.post("/api/post", (req, res) =>{
-    const {naslov, slika, tekst} = req.body;
-    const sqlInsert = "INSERT INTO vijesti_db (naslov, slika, tekst) VALUES (?, ?, ?)";
-    db.query(sqlInsert, [naslov, slika, tekst], (error, result) =>{
-        if (error) {
-            console.log(error);
-        }
-    })
+// app.post("/submit", (req, res) =>{
+//     const {naslov, slika, tekst} = req.body;
+//     const sqlInsert = "INSERT INTO vijesti_db (naslov, slika, tekst) VALUES (?, ?, ?)";
+//     db.query(sqlInsert, [naslov, slika, tekst], (error, result) =>{
+//         if (error) {
+//             console.log(error);
+//         }
+//     })
 
-})
+// })
+
+
+app.post('/post', (req, res) => {
+    const formData = {
+      naslov: req.body.naslov,
+      slika: req.body.slika,
+      tekst: req.body.tekst
+    };
+  
+    db.query('INSERT INTO vijesti_db SET ?', formData, (error, results, fields) => {
+      if (error) {
+        console.error('Error inserting data into MySQL: ' + error.stack);
+        return;
+      }
+      // Handle successful data insertion
+      console.log('Data inserted successfully!');
+    });
+  });
+
+  // app.post('/example', (req, res) => {
+  //   res.send(`Full name is:${req.body.naslov} ${req.body.slika} and ${req.body.tekst} .`);
+  // });
+
 
 app.delete("/api/remove/:id", (req, res) =>{
     const {id} = req.params;
