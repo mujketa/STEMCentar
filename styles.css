@@ -270,14 +270,15 @@ p{
 }
 #carouselExampleDark{
     margin: 0 auto;
-    max-width: 800px;
+    
     padding:0;  
     overflow:visible;
 }
 
 .carousel-item{
-    overflow:visible;
-    transition: 0.4s !important;
+    transition-property: transform; /* Only animate transform */
+  transition-duration: 0.5s; /* Transition duration */
+  transform: translateX(0%); /* Initial position */
 }
 
   /*Animirani text*/
@@ -294,7 +295,9 @@ p{
     typing 3s steps(40, end),
 
 }
-
+.red-text{
+    color:red;
+}
 @keyframes typing {
   from {
     width: 0; /* Start with no width */

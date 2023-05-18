@@ -67,24 +67,40 @@
           </div>
 <script>
 const textElement = document.querySelector('.typing-text');
-const texts = ['STEM CENTAR', 'UZ STEM RASTEM!', '']; // Array of texts to display
+const texts = [' CENTAR', 'UZ STEM RA!', '']; // Array of texts to display
 
 let textIndex = 0;
 let charIndex = 0;
 
 function type() {
   if (charIndex < texts[textIndex].length) {
-    textElement.textContent += texts[textIndex].charAt(charIndex);
+    if (charIndex === 0 && charIndex!=texts[textIndex].indexOf('UZ STEM RA!')) {
+      const spanElement = document.createElement('span');
+      spanElement.innerHTML = 'STEM';
+      spanElement.classList.add('red-text');
+      textElement.appendChild(spanElement);
+    }else if  (charIndex === texts[textIndex].indexOf('!')) {
+      const spanElement = document.createElement('span');
+      spanElement.textContent = 'STEM';
+      spanElement.classList.add('red-text');
+      textElement.appendChild(spanElement);
+    }
+  }
+  
+  
+  if (charIndex < texts[textIndex].length) {
+    textElement.innerHTML += texts[textIndex].charAt(charIndex);
     charIndex++;
     setTimeout(type, 50); // Adjust the typing speed as desired
   } else {
     setTimeout(erase, 1000); // Delay before erasing the text
   }
+  
 }
 
 function erase() {
   if (charIndex > 0) {
-    textElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+    textElement.innerHTML = texts[textIndex].substring(0, charIndex - 1);
     charIndex--;
     setTimeout(erase, 30); // Adjust the erasing speed as desired
   } else {
