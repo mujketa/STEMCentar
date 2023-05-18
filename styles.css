@@ -34,11 +34,16 @@ p{
 #title{
     
     background-image: url(/images/pozadina.png);
+    background-repeat: no-repeat;
     color: #fff;
     padding-bottom: 11%;
+    background-size: cover;
+   
 }
+
 .container-fluid{
     padding: 3% 15% 7%;
+    
 }
 
 /* Navbar*/
@@ -76,13 +81,7 @@ p{
     margin-left: 35%;
 }
 
-/* Title image */
-.title-image{
-    width: 80%;
-    position: absolute;
-    right: -30%;
-    bottom: -4rem;
-}
+
 .add-button{
     margin-top: 2rem;
 }
@@ -121,9 +120,12 @@ p{
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
-    padding: 7% 15%;
+    padding-bottom: 7%;
+    padding-top: 7%;
     text-align: center;
+    overflow: hidden;
 }
+
 .visit-heading{
     font-family: "Montserrat";
     font-size: 3.5rem;
@@ -151,6 +153,8 @@ p{
 
 .form-body{
     background-image:url(images/pozadinaflipped.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .form-holder {
@@ -160,6 +164,7 @@ p{
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    
 }
 
 .form-holder .form-content {
@@ -175,6 +180,7 @@ p{
   -webkit-align-items: center;
   align-items: center;
   padding: 60px;
+  
 }
 
 .form-content .form-items {
@@ -281,9 +287,29 @@ p{
   transform: translateX(0%); /* Jako bitno za carousel animaciju */
 }
 
+/* Title image */
+.row{
+    display: flex;
+  align-items: center;
+}
+
+.logodiv{
+    
+    width:50%;
+    text-align: center;
+}
+.title-image{
+    width: 50%;
+ 
+}
   /*Animirani text*/
+  .typing-text-div{
+    text-align: center;
+  }
   .typing-text {
     font-family: 'Montserrat';  
+    flex: 1;
+    
     font-size: 3rem;  line-height: 1.5;  
     font-weight: 900;
     overflow: show; /* Hide overflowing text */
@@ -309,8 +335,8 @@ p{
       opacity: 0; /* Hide the cursor */
     }
   }
-.red-text{
-    color:red;
+.animated-text{
+    color:limegreen;
 }
 @keyframes typing {
   from {
@@ -321,7 +347,7 @@ p{
   }
 }
 
-  .col-lg-6{
+  .typing-text-div{
     height:100px;
     width:600px;
   }

@@ -58,11 +58,12 @@
         <!-- Title -->
     
         <div class="row">
+          <div class="typing-text-div">
+            <h1 class="typing-text"></h1>
+          </div>
+            <div id="img" class="logodiv">
+              <img class="title-image" src="images/logo.png" alt="STEMlogo">
             
-          <div class="col-lg-6">
-            <h1 class="typing-text">
-              
-            </h1>
             <!-- <button id="show" type="button" class="btn btn-outline-light btn-lg add-button">Dodaj vijest</button> -->
           </div>
 <script>
@@ -77,12 +78,12 @@ function type() {
     if (charIndex === 0 && charIndex!=texts[textIndex].indexOf('UZ STEM RA!')) {
       const spanElement = document.createElement('span');
       spanElement.innerHTML = 'STEM';
-      spanElement.classList.add('red-text');
+      spanElement.classList.add('animated-text');
       textElement.appendChild(spanElement);
     }else if  (charIndex === texts[textIndex].indexOf('!')) {
       const spanElement = document.createElement('span');
       spanElement.textContent = 'STEM';
-      spanElement.classList.add('red-text');
+      spanElement.classList.add('animated-text');
       textElement.appendChild(spanElement);
     }
   }
@@ -114,9 +115,7 @@ function erase() {
 // Start the animation
 type();
 </script>
-        <div id="img" class="col-lg-4 col-md-9">
-          <img class="title-image" src="images/logo.png" alt="STEMlogo">
-        </div>
+        
     
       </div>
 
@@ -309,8 +308,8 @@ type();
   <a href="https://goo.gl/maps/hRKoVRRhmH7rfLJy8">
     <button class="visit-button btn btn-outline-light" type="button"><i class="fa-solid fa-location-dot"></i> STEMCentar</button>
  </a>
- <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2209.774761182296!2d17.90610495410797!3d44.195633486219315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ee3d960ad3409%3A0x3e0d5f33e5532da4!2sSTEM%20centar!5e0!3m2!1sen!2sba!4v1684310481581!5m2!1sen!2sba"
-  width=100%" height="600px" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ <p><iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2209.774761182296!2d17.90610495410797!3d44.195633486219315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ee3d960ad3409%3A0x3e0d5f33e5532da4!2sSTEM%20centar!5e0!3m2!1sen!2sba!4v1684310481581!5m2!1sen!2sba"
+  width="150%" height="400px" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
  </p>
 </div>
 </section>
