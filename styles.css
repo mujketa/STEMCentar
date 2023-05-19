@@ -81,6 +81,13 @@ p{
     margin-left: 35%;
 }
 
+/* Title image
+.title-image{
+  width: 60%;
+  position: absolute;
+  right: -30%;
+  bottom: -3rem;
+} */
 
 .add-button{
     margin-top: 2rem;
@@ -131,6 +138,7 @@ p{
     font-size: 3.5rem;
     line-height: 1.5; 
 }
+
 
 /* footer section */
 #footer{
@@ -276,7 +284,6 @@ p{
 }
 #carouselExampleDark{
     margin: 0 auto;
-    
     padding:0;  
     overflow:visible;
 }
@@ -313,11 +320,11 @@ p{
     font-size: 3rem;  line-height: 1.5;  
     font-weight: 900;
     overflow: show; /* Hide overflowing text */
-  white-space: nowrap; /* Prevent line breaks */
-  margin: 0 auto; /* Center the text */
-  letter-spacing: 0.15em; /* Adjust letter spacing */
-  animation:
-    typing 3s steps(40, end),
+    white-space: nowrap; /* Prevent line breaks */
+    margin: 0 auto; /* Center the text */
+    letter-spacing: 0.15em; /* Adjust letter spacing */
+    animation:
+      typing 3s steps(40, end),
 
 }
 .typing-text::after {
