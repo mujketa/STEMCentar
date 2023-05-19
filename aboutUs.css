@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6{
 h3{
     /* font-weight: bold; */
     font-size: 1.5rem;
+    
 }
 h2{
     font-weight: bold;
@@ -62,9 +63,14 @@ p{
     align-items: flex-end;
 }
 
-.abouth1, .abouth3{
+.abouth1{
     text-align: center;
     color: #fff;
+}
+.abouth3{
+    text-align: justify;
+    color: #fff;
+    
 }
 
 .aboutText{
@@ -73,4 +79,5 @@ p{
     align-items: center;
     width: 80%;
     padding-top: 1rem;
+    
 }

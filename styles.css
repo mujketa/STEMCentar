@@ -49,7 +49,7 @@ p{
 /* Navbar*/
 
 .navbar-brand{
-    font-family: "Ubuntu";
+  font-family: 'Montserrat';
     font-size: 2.5rem;
     font-weight: bold;
 }
@@ -63,7 +63,9 @@ p{
     padding: 0 18px;
 }
 .nav-link{
-    font-size: 1.2rem;
+  font-family: 'Montserrat';
+    
+     
 }
 .navbar-nav{
     align-items: flex-end;
@@ -296,22 +298,26 @@ p{
 
 /* Title image */
 .row{
-    display: flex;
-  align-items: center;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Distribute items horizontally */
 }
 
 .logodiv{
-
-    width:50%;
+    margin-top: 5%;
+    width:30%;
     text-align: center;
 }
 .title-image{
-    width: 50%;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
  
 }
   /*Animirani text*/
   .typing-text-div{
     text-align: center;
+    
   }
   .typing-text {
     font-family: 'Montserrat';  
@@ -354,10 +360,6 @@ p{
   }
 }
 
-  .typing-text-div{
-    height:100px;
-    width:600px;
-  }
   
   
 /* responsive */
