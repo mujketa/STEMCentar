@@ -8,6 +8,7 @@ body{
     font-family: "Montserrat";
 }
 
+/* Headings*/
 h1, h2, h3, h4, h5, h6{
     font-family: "Montserrat";
 }
@@ -29,25 +30,78 @@ h2{
 p{
     color: #8f8f8f;
 }
-/* headings*/
 
+/* Title */
 #title{
-    
     background-image: url(/images/pozadina.png);
     background-repeat: no-repeat;
     color: #fff;
     padding-bottom: 11%;
     background-size: cover;
-   
+}
+.container-fluid{
+    padding: 3% 15% 7%;  
 }
 
-.container-fluid{
-    padding: 3% 15% 7%;
-    
+/* Title image */
+.row{
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Distribute items horizontally */
+}
+.logodiv{
+    margin-top: 5%;
+    width:30%;
+    text-align: center;
+}
+.title-image{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/*Animirani text*/
+.typing-text-div{
+  text-align: center;
+}
+.typing-text {
+  font-family: 'Montserrat';  
+  flex: 1;
+  font-size: 3rem;  line-height: 1.5;  
+  font-weight: 900;
+  overflow: show; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent line breaks */
+  margin: 0 auto; /* Center the text */
+  letter-spacing: 0.15em; /* Adjust letter spacing */
+  animation:
+    typing 3s steps(40, end),
+}
+.typing-text::after {
+  content: "|"; /* Cursor symbol */
+  display: inline-block;
+  animation: cursor-blink 0.75s infinite;
+} 
+@keyframes cursor-blink {
+  from, to {
+    opacity: 1; /* Show the cursor */
+  }
+  50% {
+    opacity: 0; /* Hide the cursor */
+  }
+}
+.animated-text{
+    color:limegreen;
+}
+@keyframes typing {
+  from {
+    width: 0; /* Start with no width */
+  }
+  to {
+    width: 100%; /* Gradually expand the width */
+  }
 }
 
 /* Navbar*/
-
 .navbar-brand{
   font-family: 'Montserrat';
     font-size: 2.5rem;
@@ -70,60 +124,63 @@ p{
 .navbar-nav{
     align-items: flex-end;
 }
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
+/* News */
+.container-news{
+  background-color: black;
+  padding-bottom: 5%;
+}
+h1 {
+  color: #fff;
+  padding: 10px 0;
+  padding-bottom: 30px;
+  font-weight: bold;
+}
+h5{
+  color: #000;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: none;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  }
+  .a {
+    color:initial;
+    &:hover {
+      text-decoration: initial;
+    }
+  }
+  .text-muted i {
+    margin: 0 10px;
+  }
+}
+.card-title{
+  font-style: italic;
+  font-family: "Montserrat";
+}
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
-/* VisitButton */
+/* Slides section */
+#carouselExampleDark{
+  margin: 0 auto;
+  padding:0;  
+  overflow:visible;
+}
+.carousel-item{
+  transition-property: transform; /* Only animate transform */
+transition-duration: 0.5s; /* Transition duration */
+transform: translateX(0%); /* Jako bitno za carousel animaciju */
+}
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
+/* Visit section */
 .visit-button{
-    /* malo da odmaknem buttone od texta i slike */
-    margin: 5% 3% 5% 0%;
+  /* malo da odmaknem buttone od texta i slike */
+  margin: 5% 3% 5% 0%;
 }
-
-.submit-btn{
-    margin-left: 35%;
-}
-
-/* Title image
-.title-image{
-  width: 60%;
-  position: absolute;
-  right: -30%;
-  bottom: -3rem;
-} */
-
-.add-button{
-    margin-top: 2rem;
-}
-
-/* Food section */
-#foods-row{
-    /* top bottom i left right */
-    padding: 5% 15%; 
-    background-color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-/* offers section*/
-
-#offers{
-    color: #040505;
-    padding: 7% 15%;
-    text-align: center;
-}
-.offers-heading{
-    font-family: "Montserrat";
-    font-size: 3.5rem;
-    line-height: 1.5; 
-}
-
-.btn-more{
-    color: #040505;
-}
-
-/* visit section */
-
 .visit-background{
     background-image: url('images/lokacija.jpg');
     background-repeat: no-repeat;
@@ -134,39 +191,22 @@ p{
     text-align: center;
     overflow: hidden;
 }
-
 .visit-heading{
     font-family: "Montserrat";
     font-size: 3.5rem;
     line-height: 1.5; 
 }
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
-
-/* footer section */
-#footer{
-    padding: 7% 15%;
-    text-align: center;
-}
-.social-icon{
-    margin:20px 10px;
-}
-/* add food button */
-.center {
-    margin-top: 5%;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
+/* Application section */
 .hideform {
     display: none;
 }
-
 .form-body{
     background-image:url(images/pozadinaflipped.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .form-holder {
     display: flex;
     flex-direction: column;
@@ -174,9 +214,7 @@ p{
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    
 }
-
 .form-holder .form-content {
   position: relative;
   text-align: center;
@@ -190,9 +228,7 @@ p{
   -webkit-align-items: center;
   align-items: center;
   padding: 60px;
-  
 }
-
 .form-content .form-items {
   border: 3px solid #fff;
   padding: 40px;
@@ -206,7 +242,6 @@ p{
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-
 .form-content h3 {
   color: #fff;
   text-align: left;
@@ -214,11 +249,9 @@ p{
   font-weight: 600;
   margin-bottom: 5px;
 }
-
 .form-content h3.form-title {
   margin-bottom: 30px;
 }
-
 .form-content p {
   color: #fff;
   text-align: left;
@@ -227,12 +260,9 @@ p{
   line-height: 20px;
   margin-bottom: 30px;
 }
-
-
 .form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
   color: #fff;
 }
-
 .form-content input[type=text], .form-content input[type=phone], .form-content input[type=email], .form-content select {
   width: 100%;
   padding: 9px 20px;
@@ -248,9 +278,6 @@ p{
   transition: all 0.3s ease;
   margin-top: 16px;
 }
-
-
-
 .form-content textarea {
   position: static !important;
   width: 100%;
@@ -269,102 +296,21 @@ p{
   transition: none;
   margin-bottom: 14px;
 }
-
 .form-content textarea:hover, .form-content textarea:focus {
   border: 0;
   background-color: #ebeff8;
   color: #8D8D8D;
 }
-
 .mv-up{
   margin-top: -9px !important;
   margin-bottom: 8px !important;
 }
-
 .invalid-feedback{
   color: #ff606e;
 }
-#carouselExampleDark{
-    margin: 0 auto;
-    padding:0;  
-    overflow:visible;
-}
-
-.carousel-item{
-    transition-property: transform; /* Only animate transform */
-  transition-duration: 0.5s; /* Transition duration */
-  transform: translateX(0%); /* Jako bitno za carousel animaciju */
-}
-
-/* Title image */
-.row{
-  display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Distribute items horizontally */
-}
-
-.logodiv{
-    margin-top: 5%;
-    width:30%;
-    text-align: center;
-}
-.title-image{
-  width: 100%;
-  max-width: 400px;
-  height: auto;
- 
-}
-  /*Animirani text*/
-  .typing-text-div{
-    text-align: center;
-    
-  }
-  .typing-text {
-    font-family: 'Montserrat';  
-    flex: 1;
-    
-    font-size: 3rem;  line-height: 1.5;  
-    font-weight: 900;
-    overflow: show; /* Hide overflowing text */
-    white-space: nowrap; /* Prevent line breaks */
-    margin: 0 auto; /* Center the text */
-    letter-spacing: 0.15em; /* Adjust letter spacing */
-    animation:
-      typing 3s steps(40, end),
-
-}
-.typing-text::after {
-    content: "|"; /* Cursor symbol */
-    display: inline-block;
-    
-    animation: cursor-blink 0.75s infinite;
-  }
-  
-  @keyframes cursor-blink {
-    from, to {
-      opacity: 1; /* Show the cursor */
-    }
-    50% {
-      opacity: 0; /* Hide the cursor */
-    }
-  }
-.animated-text{
-    color:limegreen;
-}
-@keyframes typing {
-  from {
-    width: 0; /* Start with no width */
-  }
-  to {
-    width: 100%; /* Gradually expand the width */
-  }
-}
-
-  
+/* ----------------------------------------------------------------------------------------------------------------------- */
   
 /* responsive */
- 
-
 @media (max-width: 1028px){
     #title{
         text-align: center;
