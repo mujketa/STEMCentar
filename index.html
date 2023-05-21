@@ -59,13 +59,36 @@
           <div class="row">
             <div class="col-md-6 col-sm-12 typing-text-div">
               <h1 class="typing-text"></h1>
+            <div id="overlay">
+                <div class="square"></div>
+            </div>
             </div>
             <div id="img" class="col-md-6 col-sm-12 logodiv">
               <img class="title-image" src="images/logo.png" alt="STEMlogo">
             </div>
+            
           </div>
+<!-- Animirane kockice -->
+<script>
+  function createSquare() {
+  const square = document.createElement('div');
+  square.classList.add('square');
+  
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+  square.style.left = x + 'px';
+  square.style.top = y + 'px';
+  
+  document.getElementById('overlay').appendChild(square);
+  
+  setTimeout(() => {
+      square.remove();
+  }, 1000);
+}
 
-<!-- Animation-->
+setInterval(createSquare, 100);
+</script>
+<!-- Animirani tekst-->
 <script>
 const textElement = document.querySelector('.typing-text');
 const texts = [' CENTAR', 'UZ STEM RA!', '']; // Array of texts to display
