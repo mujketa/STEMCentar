@@ -319,28 +319,6 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
 .invalid-feedback{
   color: #ff606e;
 }
-/* ----------------------------------------------------------------------------------------------------------------------- */
-  
-/* responsive */
-@media (max-width: 1028px){
-    #title{
-        text-align: center;
-    }
-    .title-image{
-        position: static;
-        margin-top: 2rem;
-        margin-left: 7rem;
-    }
-    .center{
-        text-align: center;
-        margin-left: 6rem;
-    }
-    #foods-row{
-        /* top bottom i left right */
-        padding: 5% 15%; 
-    }
-  
-}
 
 /* Animirane kockice */
 #overlay {
@@ -377,3 +355,52 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
   }
 }
 
+/* ----------------------------------------------------------------------------------------------------------------------- */
+  
+/* responsive */
+@media (max-width: 1028px){
+  #title{
+      text-align: center;
+      background-size: 200%;
+  }
+  .typing-text-div{
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  .typing-text{
+    
+    font-size: 1.4rem;
+  }
+  .logodiv{
+    margin: 0 auto;
+    width: 50%;
+  }
+  .title-image{
+      position: static;
+        
+  }
+
+  .center{
+      text-align: center;
+      margin-left: 6rem;
+  }
+  #foods-row{
+      /* top bottom i left right */
+      padding: 5% 15%; 
+  }
+  .navbar-brand{
+    font-size: 2rem;
+    padding-top: 8%;
+    
+  }
+  .form-body{
+    background-position: bottom;
+    background-size: 200%;
+  }
+  .form-content{
+    height: 50%;
+  }
+
+
+}
