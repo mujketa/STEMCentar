@@ -36,10 +36,11 @@ p{
 /* Title */
 #title{
     background-image: url(/images/pozadina.png);
-    background-repeat: no-repeat;
+    background-repeat:round;
+    position:relative;
     color: #fff;
-    padding-bottom: 11%;
-    background-size: cover;
+    /* padding-bottom: 11%; */
+    background-size:100%;
 }
 .container-fluid{
     padding: 3% 15% 7%;  
@@ -111,16 +112,19 @@ p{
 }
 .navbar{
     padding: 0 0 4.5rem;
+    font-family: 'Montserrat';
 }
 .some{
     padding-bottom: 5em;
 }
 .nav-item{
     padding: 0 18px;
+    
 }
 .nav-link{
-  font-family: 'Montserrat';
-    
+  font-family: 'Montserrat'!important;
+  font-size: 1.5rem !important;
+  font-weight: bold;                       
      
 }
 .navbar-nav{
@@ -132,6 +136,7 @@ p{
 .container-news{
   background-color: black;
   padding-bottom: 5%;
+  padding-top: 15%;
 }
 h1 {
   color: #fff;
