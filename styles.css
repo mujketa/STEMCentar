@@ -8,6 +8,7 @@
 body{
     font-family: "Montserrat";
     overflow-x: hidden;
+    background-color: #000;
 }
 
 /* Headings*/
@@ -36,7 +37,7 @@ p{
 /* Title */
 #title{
     background-image: url(/images/pozadina.png);
-    background-repeat:round;
+    background-repeat: no-repeat;
     position:relative;
     color: #fff;
     /* padding-bottom: 11%; */
@@ -215,6 +216,7 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
     background-image:url(images/pozadinaflipped.png);
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 .form-holder {
     display: flex;
