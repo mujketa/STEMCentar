@@ -106,6 +106,39 @@ p{
   }
 }
 
+/* Animirane kockice */
+#overlay {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  height: 93%;
+  pointer-events: none;
+  z-index: +1; /* Ensure the overlay is behind the content */
+  overflow:hidden;
+  padding-top: 40%;
+}
+.square {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: limegreen;
+  animation: squarePopUp 2s infinite;
+}
+@keyframes squarePopUp {
+  0% {
+      opacity: 0;
+      transform: scale(0);
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: scale(1.5);
+  }
+}
+
 /* Navbar*/
 .navbar-brand{
   font-family: 'Montserrat';
@@ -318,41 +351,6 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
 }
 .invalid-feedback{
   color: #ff606e;
-}
-
-/* Animirane kockice */
-#overlay {
-  position: absolute;
-  top: 35%;
-  left: 0;
-  width: 100%;
-  height: 93%;
-  pointer-events: none;
-  z-index: +1; /* Ensure the overlay is behind the content */
-  overflow:hidden;
-  padding-top: 40%;
-}
-
-.square {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: limegreen;
-  animation: squarePopUp 2s infinite;
-}
-
-@keyframes squarePopUp {
-  0% {
-      opacity: 0;
-      transform: scale(0);
-  }
-  50% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0;
-      transform: scale(1.5);
-  }
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
