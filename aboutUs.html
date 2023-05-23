@@ -58,29 +58,5 @@
     </div>
   </div>
 
-  <script>
-    async function getData() {
-      //prikaz stavki (GET)
-    
-      const response = await fetch("http://localhost:5000/data");
-      const data = await response.json();
-      console.log(data);
-      for (let i = 0; i < data.length; i++) {
-        let tempHtml = `
-              <div class="p-card">
-                <img src="${data[i].naslov}" alt="Net Error" />
-                <h4><span id="nam0">${data[i].slika}</span></h4>
-                <p class="price"><span id="pri0">${data[i].tekst}</span></p>   
-              </div>
-      `;
-        document
-          .querySelector(".form-holder")
-          .insertAdjacentHTML("beforeend", tempHtml);
-      }
-    }
-    getData();</script>
-
-
-<script src="/server/index.js"></script>
 </body>
 </html>
