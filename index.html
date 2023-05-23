@@ -352,6 +352,30 @@ type();
   </div>
 </section>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
+<script>
+async function getData() {
+  //prikaz stavki (GET)
+
+  const response = await fetch("http://localhost:5000/api/get");
+  const data = await response.json();
+  console.log(data);
+  for (let i = 0; i < data.length; i++) {
+    let tempHtml = `
+          <div class="card">
+  <img class="card-img-top" src="${data[i].slika}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><span id="nam0">${data[i].naslov}</span></h5>
+    <p class="card-text"><span id="pri0">${data[i].tekst}</span></p>
+  </div>
+</div>
+  `;
+    document
+      .querySelector(".card-columns")
+      .insertAdjacentHTML("beforeend", tempHtml);
+  }
+}
+getData();
+</script>
 
 <!-- Footer -->
 </body>
