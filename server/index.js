@@ -4,7 +4,7 @@ const bodyParser = require ("body-parser");
 const mysql = require ("mysql2");
 const cors = require ("cors");
 
-const db = mysql.createPool({
+const db = mysql.createPool({ //cd C:\Users\pc\Documents\GitHub\STEMCentar\server
     host: "localhost",
     user: "root",
     password: "0000",
