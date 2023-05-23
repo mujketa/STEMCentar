@@ -4,12 +4,19 @@ const bodyParser = require ("body-parser");
 const mysql = require ("mysql2");
 const cors = require ("cors");
 
-const db = mysql.createPool({
+// const db = mysql.createPool({
+//     host: "localhost",
+//     user: "root",
+//     password: "mujketa7265",
+//     database: "stemcentar"
+// });
+
+const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "mujketa7265",
     database: "stemcentar"
-});
+ });
 
 app.use(cors());
 app.use(express.json());
@@ -19,13 +26,40 @@ app.use((req,res,next)=>{
     next();  
   })
 
+  
+  // Connect to the database
+  connection.connect((err) => {
+    if (err) {
+      console.error('Error connecting to the database:', err);
+      return;
+    }
+    console.log('Connected to the database');
+  });
+  
+  // Define a route to fetch data from the database
+  app.get('/data', (req, res) => {
+    const query = 'SELECT * FROM vijesti_db';
+  
+    // Execute the query
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing query:', error);
+        return res.status(500).json({ error: 'Error fetching data from the database' });
+      }
+  
+      // Send the data as JSON response
+      res.json(results);
+    });
+  });
 
-  app.get("/api/get", (req, res) => {
-    const sqlGet = "SELECT * FROM vijesti_db";
-    db.query(sqlGet, (error, result) =>{
-        res.send(result);
-    })
-})
+//   app.get("/api/get", (req, res) => {
+//     const sqlGet = "SELECT * FROM vijesti_db";
+//     db.query(sqlGet, (error, result) =>{
+//         res.send(result);
+//     })
+// })
+
+
 
 // app.post("/submit", (req, res) =>{
 //     const {naslov, slika, tekst} = req.body;
