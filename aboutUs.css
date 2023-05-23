@@ -9,6 +9,7 @@ body{
     background-color: black;
 }
 
+/* Headings*/
 h1, h2, h3, h4, h5, h6{
     font-family: "Montserrat";
 }
@@ -26,6 +27,7 @@ p{
     color: #8f8f8f;
 }
 
+/* Title */
 #title{
     background-image: url(/images/pozadina.png);
     background-repeat: no-repeat;
@@ -34,16 +36,14 @@ p{
     background-size: cover;
    
 }
-
 .container-fluid{
-    padding: 3% 15% 7%;
+    padding: 3% 10% 7%;
     
 }
 
 /* Navbar*/
-
 .navbar-brand{
-    font-family: "Ubuntu";
+    font-family: 'Montserrat';
     font-size: 2.5rem;
     font-weight: bold;
 }
@@ -57,12 +57,16 @@ p{
     padding: 0 18px;
 }
 .nav-link{
-    font-size: 1.2rem;
+    font-family: 'Montserrat'!important;
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  white-space: nowrap; 
 }
 .navbar-nav{
     align-items: flex-end;
 }
 
+/* About us text */
 .abouth1{
     text-align: center;
     color: #fff;
@@ -72,7 +76,6 @@ p{
     color: #fff;
     
 }
-
 .aboutText{
     margin: auto;
     display: flex;

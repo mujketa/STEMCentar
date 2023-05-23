@@ -24,50 +24,71 @@
 <body>
 
     <section id="title">
-
         <div class="container-fluid" >
       
           <!-- Navbar -->
           <div class="some">
-          <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="">STEMCentar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Pocetna</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aboutUs.html">O nama</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#sekcijatest">Kursevi</a>
-                </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#apply">Prijava</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#visit">Lokacija</a>
-          </li>
-            </ul>
-        </div>
-        </nav>
-      </div>
-    
-        <!-- Title -->
-    
-        <div class="row">
-          <div class="col-md-6 col-sm-12 typing-text-div">
-            <h1 class="typing-text"></h1>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+              <a class="navbar-brand" href="">STEMCentar</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="index.html">Pocetna</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="aboutUs.html">O nama</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#sekcijatest">Kursevi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#apply">Prijava</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#visit">Lokacija</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
           </div>
+    
+          <!-- Title -->
+          <div class="row">
+            <div class="col-md-6 col-sm-12 typing-text-div">
+              <h1 class="typing-text"></h1>
+            </div>
+            <div id="overlay">
+              <div class="square"></div>
+            </div>
             <div id="img" class="col-md-6 col-sm-12 logodiv">
               <img class="title-image" src="images/logo.png" alt="STEMlogo">
-            <!-- <button id="show" type="button" class="btn btn-outline-light btn-lg add-button">Dodaj vijest</button> -->
             </div>
-        </div>
-        
+            
+          </div>
+<!-- Animirane kockice -->
+<script>
+  function createSquare() {
+  const square = document.createElement('div');
+  square.classList.add('square');
+  
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+  square.style.left = x + 'px';
+  square.style.top = y + 'px';
+  
+  document.getElementById('overlay').appendChild(square);
+  
+  setTimeout(() => {
+      square.remove();
+  }, 1500);
+}
+
+setInterval(createSquare, 270);
+</script>
+<!-- Animirani tekst-->
 <script>
 const textElement = document.querySelector('.typing-text');
 const texts = [' CENTAR', 'UZ STEM RA!', '']; // Array of texts to display
@@ -117,287 +138,246 @@ function erase() {
 // Start the animation
 type();
 </script>
-      
+     
+    </section>
+<!-- -------------------------------------------------------------------------------------------------------------    -->
 
-       
-       <!-- Forma za POST -->
-      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <div class="center  col-lg-5 col-sm-9">
-          <button id="close" type="button" class="btn-close" style="float: right;" aria-label="Close"></button>
-          <form action="http://localhost:5000/post" method="POST">
-            <div class="mb-3">
-              <label class="col-form-label">Naslov:</label>
-              <input type="text" class="form-control" name="naslov" required>
-            </div>
-            <div class="mb-3">
-              <label  class="col-form-label">Slika:</label>
-              <input type="text" class="form-control" name="slika" required>
-            </div>
-            <div class="mb-3">
-                <label class="col-form-label">Tekst:</label>
-                <input type="text" class="form-control" name="tekst" required>
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-outline-light">Submit</button>
-              </div>
-          </form>        
-      </div> -->
-      
-    
-      </section>
-      
-    <!--    
-    MODAL 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-                <label for="food-id" class="col-form-label">Id:</label>
-                <input type="text" class="form-control" id="food-id" disabled>
-              </div>
-            <div class="mb-3">
-              <label for="food-name" class="col-form-label">Name:</label>
-              <input type="text" class="form-control" id="food-name">
-            </div>
-            <div class="mb-3">
-              <label for="food-image" class="col-form-label">Image:</label>
-              <input type="text" class="form-control" id="food-image">
-            </div>
-            <div class="mb-3">
-                <label for="food-price" class="col-form-label">Price:</label>
-                <input type="number" class="form-control" id="food-price">
-              </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onclick="editFood()">Submit</button>
-        </div>
-      </div>
-    </div>
+<!-- News -->
+<div class="container-news">
+  <div class="text-center">
+    <h1>Najnovija dešavanja</h1>
   </div>
-</section> -->
-
-<!-- Offers section -->
-
-
-
-<section id="offers">
-  <h3 class="offers-heading">Šta nudimo?</h3>
-
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="images/image1.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">STEM edukacija</h5>
-          <p class="card-text">Naše STEM edukacije su interaktivnog tipa tako da će svaki polaznik imati priliku da pokaže svoja znanja i vještine, te dodatno unaprijedi iste.</p>
-          <a href="#" class="btn-more">Vidi više</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="images/image2.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Robotika i programiranje</h5>
-          <p class="card-text">Kroz učenje principa programiranja podstiče se radoznalost, logika, kreativnost, rješavanje problema, sistematsko i analitičko razmišljanje, pravljenje sistema iz pojedinačnih dijelova.</p>
-          <a href="#" class="btn-more">Vidi više</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="images/image3.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Učenje i širenje naučenog</h5>
-          <p class="card-text">Interaktivni tip radionica potiče samopouzdanje i slobodu izražavanja misli i ideja te proaktivan stav pri traženju rješenja.</p>
-          <a href="#" class="btn-more">Vidi više</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- TEST -->
-<section id="sekcijatest" >
-<div id="carouselExampleDark" class="carousel carousel-dark slide" >
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="5000">
-      <img src="images/programiranje.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="slide">PROGRAMIRANJE</h5>
-        <!-- <p>Some representative placeholder content for the first slide.</p> -->
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="images/robotikaa.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="slide">ROBOTIKA</h5>
-        <!-- <p>Some representative placeholder content for the second slide.</p> -->
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="images/elektornika.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="slide">ELEKTRONIKA</h5>
-        <!-- <p>Some representative placeholder content for the second slide.</p> -->
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="images/graficki_dizajn.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="slide">GRAFIČKI DIZAJN</h5>
-        <!-- <p>Some representative placeholder content for the second slide.</p> -->
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="images/matematika.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="slide">KREATIVNA MATEMATIKA</h5>
-        <!-- <p>Some representative placeholder content for the second slide.</p> -->
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="images/fizika.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="slide">KREATIVNA FIZIKA</h5>
-        <!-- <p>Some representative placeholder content for the second slide.</p> -->
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="images/hemija.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="slide">KREATIVNA HEMIJA</h5>
-        <!-- <p>Some representative placeholder content for the third slide.</p> -->
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<!-- TEST -->
-
-
-<!-- Visit us section -->
-
-<section id="visit">
-  <div class="visit-background">
-  <h3 class="visit-heading">Posjeti nas na ovoj lokaciji</h3>
-  <a href="https://goo.gl/maps/hRKoVRRhmH7rfLJy8">
-    <button class="visit-button btn btn-outline-light" type="button"><i class="fa-solid fa-location-dot"></i> STEMCentar</button>
- </a>
- <p class="map"><iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2209.774761182296!2d17.90610495410797!3d44.195633486219315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ee3d960ad3409%3A0x3e0d5f33e5532da4!2sSTEM%20centar!5e0!3m2!1sen!2sba!4v1684310481581!5m2!1sen!2sba"
-  width="70%" height="400px" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
- </p>
-</div>
-</section>
-
-<!-- Application section-->
-
-<section id="apply">
-
-<div class="form-body">
-  <div class="row">
-      <div class="form-holder">
-          <div class="form-content">
-              <div class="form-items">
-                  <h3>Prijavi se</h3>
-                  <p>Popuni podatke ispod</p>
-                  <form class="requires-validation" novalidate>
-
-                      <div class="col-md-12">
-                         <input class="form-control" type="text" name="name" placeholder="Ime i prezime" required>
-                         <div class="invalid-feedback">Polje ne može biti prazno!</div>
-                      </div>
-
-                      <div class="col-md-12">
-                          <input class="form-control" type="email" name="email" placeholder="E-mail adresa" required>
-                           <div class="invalid-feedback">Polje ne može biti prazno!</div>
-                      </div>
-
-                      <div class="col-md-12">
-                        <input class="form-control" type="phone" name="phone" placeholder="Broj telefona" required>
-                         <div class="invalid-feedback">Polje ne može biti prazno!</div>
-                    </div>
-
-                     <div class="col-md-12">
-                          <select class="form-select mt-3" required>
-                                <option selected disabled value="">Kursevi</option>
-                                <option value="prog">Programiranje</option>
-                                <option value="robo">Robotika</option>
-                                <option value="elekto">Elektronika</option>
-                                <option value="grafik">Grafički dizajn</option>
-                                <option value="mat">Kreativna matematika</option>
-                                <option value="fizik">Kreativna fizika</option>
-                                <option value="hemi">Kreativna hemija</option>
-                         </select>
-                          <div class="invalid-feedback">Molimo odaberite kurs!</div>
-                     </div>
-
-                     <div class="col-md-12 mt-3">
-                      <label class="mb-3 mr-1" for="age">Uzrast: </label>
-
-                      <input type="radio" class="btn-check" name="age" id="male" autocomplete="off" required>
-                      <label class="btn btn-sm btn-outline-secondary" for="male">do 12 godina</label>
-
-                      <input type="radio" class="btn-check" name="age" id="female" autocomplete="off" required>
-                      <label class="btn btn-sm btn-outline-secondary" for="female">12-18 godina</label>
-
-                      <input type="radio" class="btn-check" name="age" id="secret" autocomplete="off" required>
-                      <label class="btn btn-sm btn-outline-secondary" for="secret">preko 18 godina</label>
-                          <div class="invalid-feedback mv-up">Molimo odaberite uzrast!</div>
-                      </div>
-
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label">Potvrđujem da su svi podaci tačni</label>
-                   <div class="invalid-feedback">Molimo potvrdite da su svi podaci tačni!</div>
-                  </div>
-            
-
-                      <div class="form-button mt-3">
-                          <button id="submit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Prijavi se</button>
-                      </div>
-                  </form>
-              </div>
+  <div class="container">
+    <div class="card-columns">
+      <div class="card">
+          <img class="card-img-top" src="images/news5.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">STEM genijalci</h5>
+            <p class="card-text">Čestitamo našim STEM genijalcima na uspješno završenom prvom polugodištu STEM AKADEMIJE. Cilj STEM Centra je da obezbijedi kvalitetnu nastavu, a da znanje koje se stekne bude odmah primjenjivo. Bilo je zadovoljstvo raditi sa vama!</p>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
           </div>
       </div>
+      <div class="card">
+          <img class="card-img-top" src="images/news3.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Državnog takmičenja u robotici</h5>
+            <p class="card-text">Univerzitet u Zenici (UNZE) bio je domaćin Državnog takmičenja u robotici, na kojem je u Gradskoj areni “Husejin Smajlović” sudjelovalo 18 ekipa iz Sarajeva, Zenice i Tuzle.</p>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
+          </div>
+      </div>
+      <div class="card">
+          <img class="card-img-top" src="images/news2.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">HOUR OF CODE</h5>
+            <p class="card-text">STEM Centar i Centar za mlade INPUT su od 06. do 11.12.2021. obilježili HOUR OF CODE - Sat kodiranja je globalna akcija američke neprofitne organizacije CODE.ORG namjenjena sticanju prvih programerskih iskustava.</p>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
+          </div>
+      </div>
+      <div class="card">
+          <img class="card-img-top" src="images/news6.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Međunarodni dan djevojaka u IKT-u</h5>
+            <p class="card-text">Kako bi djevojke i mlade žene napredovale u karijeri u području nauke, tehnologije, inženjerstva i matematike (STEM), moraju steći vještine kako bi postale i korisnice informaciono-komunikacionih tehnologija i kreatorice u digitalnom svijetu. Zato smo kroz istraživanje identificirali  “Digitalne vještine za život”  kao našu temu za Girls in ICT 2023.</p>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
+          </div>
+      </div>
+      <div class="card">
+          <img class="card-img-top" src="images/news1.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">European Robotics Week</h5>
+            <p class="card-text">Poziv za sve zainteresovane obrazovne ustanove sa područja Zeničko-dobojskog kantona da se prijave na učešće u Evropskoj sedmici robotike - European Robotics Week 2022.</p>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
+          </div>
+      </div>
+      <div class="card">
+          <img class="card-img-top" src="images/news4.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Uručena zahvalnica za saradnju.</h5>
+            <p class="card-text">JU OŠ "Meša Selimović" Zenica je danas obilježila 54. godišnjicu tim povodom je organizovana priredba. Tim povodom je i uručena zahvalnica za saradnju.
+              U ime STEM Centar  zahvaljujemo JU OŠ "Meša Selimović" Zenica, drago nam je da smo našim aktivnostima i edukacijama  dali doprinos u realizaciji MešaFest ,divne manifestacije učenika i nastavnike JU OŠ "Meša Selimović" Zenica.</p>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
+          </div>
+      </div>
+    </div>
   </div>
 </div>
+<!-- -------------------------------------------------------------------------------------------------------------    -->
 
+<!-- Slides section -->
+<section id="sekcijatest" >
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" >
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="5000">
+        <img src="images/programiranje.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="slide">PROGRAMIRANJE</h5>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="images/robotikaa.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="slide">ROBOTIKA</h5>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="images/elektornika.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="slide">ELEKTRONIKA</h5>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="images/graficki_dizajn.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="slide">GRAFIČKI DIZAJN</h5>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="images/matematika.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="slide">KREATIVNA MATEMATIKA</h5>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="images/fizika.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="slide">KREATIVNA FIZIKA</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/hemija.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="slide">KREATIVNA HEMIJA</h5>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </section>
+<!-- -------------------------------------------------------------------------------------------------------------    -->
+
+<!-- Visit us section -->
+<section id="visit">
+  <div class="visit-background">
+    <h3 class="visit-heading">Posjeti nas na ovoj lokaciji</h3>
+    <a href="https://goo.gl/maps/hRKoVRRhmH7rfLJy8">
+      <button class="visit-button btn btn-outline-light" type="button"><i class="fa-solid fa-location-dot"></i> STEMCentar</button>
+    </a>
+    <p class="map"><iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2209.774761182296!2d17.90610495410797!3d44.195633486219315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ee3d960ad3409%3A0x3e0d5f33e5532da4!2sSTEM%20centar!5e0!3m2!1sen!2sba!4v1684310481581!5m2!1sen!2sba"
+      width="70%" height="400px" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </p>
+  </div>
+</section>
+<!-- -------------------------------------------------------------------------------------------------------------    -->
+
+<!-- Application section-->
+<section id="apply">
+  <div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Prijavi se</h3>
+                    <p>Popuni podatke ispod</p>
+                    <form class="requires-validation" novalidate>
+                        <div class="col-md-12">
+                          <input class="form-control" type="text" name="name" placeholder="Ime i prezime" required>
+                          <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="form-control" type="email" name="email" placeholder="E-mail adresa" required>
+                            <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+                        <div class="col-md-12">
+                          <input class="form-control" type="phone" name="phone" placeholder="Broj telefona" required>
+                          <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <select class="form-select mt-3" required>
+                                  <option selected disabled value="">Kursevi</option>
+                                  <option value="prog">Programiranje</option>
+                                  <option value="robo">Robotika</option>
+                                  <option value="elekto">Elektronika</option>
+                                  <option value="grafik">Grafički dizajn</option>
+                                  <option value="mat">Kreativna matematika</option>
+                                  <option value="fizik">Kreativna fizika</option>
+                                  <option value="hemi">Kreativna hemija</option>
+                          </select>
+                            <div class="invalid-feedback">Molimo odaberite kurs!</div>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <label class="mb-3 mr-1" for="age">Uzrast: </label>
+
+                            <input type="radio" class="btn-check" name="age" id="male" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="male">do 12 godina</label>
+
+                            <input type="radio" class="btn-check" name="age" id="female" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="female">12-18 godina</label>
+
+                            <input type="radio" class="btn-check" name="age" id="secret" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="secret">preko 18 godina</label>
+                            <div class="invalid-feedback mv-up">Molimo odaberite uzrast!</div>
+                        </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <label class="form-check-label">Potvrđujem da su svi podaci tačni</label>
+                      <div class="invalid-feedback">Molimo potvrdite da su svi podaci tačni!</div>
+                    </div>
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Prijavi se</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- -------------------------------------------------------------------------------------------------------------    -->
+<script>
+async function getData() {
+  //prikaz stavki (GET)
+
+  const response = await fetch("http://localhost:5000/api/get");
+  const data = await response.json();
+  console.log(data);
+  for (let i = 0; i < data.length; i++) {
+    let tempHtml = `
+          <div class="card">
+  <img class="card-img-top" src="${data[i].slika}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><span id="nam0">${data[i].naslov}</span></h5>
+    <p class="card-text"><span id="pri0">${data[i].tekst}</span></p>
+  </div>
+</div>
+  `;
+    document
+      .querySelector(".card-columns")
+      .insertAdjacentHTML("beforeend", tempHtml);
+  }
+}
+getData();
+</script>
 
 <!-- Footer -->
-
-<!-- <footer id="footer">
-    <i class="social-icon fab fa-facebook"></i>
-    <i class="social-icon fab fa-instagram"></i>
-</footer> -->
-
 </body>
 
 <script src="/server/index.js"></script>
