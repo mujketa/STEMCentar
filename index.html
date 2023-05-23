@@ -160,7 +160,56 @@ type();
   </div>
   <div class="container">
     <div class="card-columns">
-      <div class="card">
+      <script>
+        async function getData() {
+          //prikaz stavki (GET)
+        
+          const response = await fetch("http://localhost:5000/api/get");
+          const data = await response.json();
+          console.log(data);
+          for (let i = 0; i < data.length; i++) {
+            let tempHtml = `
+        <div class="card">
+            <img class="card-img-top" src="${data[i].slika}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><span id="nam0">${data[i].naslov}</span></h5>
+            <p class="card-text"><span id="pri0">${data[i].tekst}</span></p>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
+          </div>
+        </div>
+          `;
+            document
+              .querySelector(".card-columns")
+              .insertAdjacentHTML("beforeend", tempHtml);
+          }
+        }
+        getData();
+        </script>
+<!-- -------------------------------------------------------------------------------------------------------------    -->
+  <!-- Forma za POST -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <div class="center  col-lg-5 col-sm-9">
+          <button id="close" type="button" class="btn-close" style="float: right;" aria-label="Close"></button>
+          <form action="http://localhost:5000/post" method="POST">
+            <div class="mb-3">
+              <label class="col-form-label">Naslov:</label>
+              <input type="text" class="form-control" name="naslov" required>
+            </div>
+            <div class="mb-3">
+              <label  class="col-form-label">Slika:</label>
+              <input type="text" class="form-control" name="slika" required>
+            </div>
+            <div class="mb-3">
+                <label class="col-form-label">Tekst:</label>
+                <input type="text" class="form-control" name="tekst" required>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-outline-light">Submit</button>
+              </div>
+          </form>        
+      </div> -->
+<!-- -------------------------------------------------------------------------------------------------------------    -->
+      <!-- <div class="card">
           <img class="card-img-top" src="images/news5.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">STEM genijalci</h5>
@@ -208,7 +257,7 @@ type();
               U ime STEM Centar  zahvaljujemo JU OŠ "Meša Selimović" Zenica, drago nam je da smo našim aktivnostima i edukacijama  dali doprinos u realizaciji MešaFest ,divne manifestacije učenika i nastavnike JU OŠ "Meša Selimović" Zenica.</p>
             <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
           </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -363,30 +412,6 @@ type();
   </div>
 </section>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
-<script>
-async function getData() {
-  //prikaz stavki (GET)
-
-  const response = await fetch("http://localhost:5000/api/get");
-  const data = await response.json();
-  console.log(data);
-  for (let i = 0; i < data.length; i++) {
-    let tempHtml = `
-          <div class="card">
-  <img class="card-img-top" src="${data[i].slika}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><span id="nam0">${data[i].naslov}</span></h5>
-    <p class="card-text"><span id="pri0">${data[i].tekst}</span></p>
-  </div>
-</div>
-  `;
-    document
-      .querySelector(".card-columns")
-      .insertAdjacentHTML("beforeend", tempHtml);
-  }
-}
-getData();
-</script>
 
 <!-- Footer -->
 </body>
