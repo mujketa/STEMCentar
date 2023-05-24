@@ -79,6 +79,20 @@
             </div>
             
           </div>
+<!-- Navbar tranzicija -->
+<script>
+  window.addEventListener('scroll', function() {
+  var navbar = document.querySelector('.some');
+  var scrollThreshold = 800; // Set the scroll threshold in pixels
+
+  if (window.pageYOffset >= scrollThreshold) {
+    navbar.classList.add('navbar-scrolled');
+  } else {
+    navbar.classList.remove('navbar-scrolled');
+  }
+});
+
+</script>
 <!-- Animirane kockice -->
 <script>
   function createSquare() {
@@ -348,7 +362,7 @@ type();
 <!-- Application section-->
 <section id="apply">
   <div class="form-body">
-    <div class="row">
+    <div class="form-row">
         <div class="form-holder">
             <div class="form-content">
                 <div class="form-items">
