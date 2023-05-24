@@ -160,22 +160,18 @@ p{
     background-size: 100%;
     background-repeat: no-repeat;
     transition: background-image 0.2s ease-out;
-
 }
 .navbar-scrolled{
   background-image: url("./images/pozadina.png");
-  
 }
 .nav-item{
-    padding: 0 18px;
-    
+    padding: 0 18px;  
 }
 .nav-link{
   font-family: 'Montserrat'!important;
   font-size: 1.5rem !important;
   font-weight: bold;
   white-space: nowrap;                       
-     
 }
 .navbar-nav{
     align-items: flex-end;

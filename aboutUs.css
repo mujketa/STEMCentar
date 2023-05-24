@@ -30,39 +30,52 @@ p{
 
 /* Title */
 #title{
-    background-image: url(/images/pozadina.png);
+    background-image: url("/images/pozadina.png");
     background-repeat: no-repeat;
     color: #fff;
     /* padding-bottom: 11%; */
-    background-size: cover;
+    background-size: 100%;
    
 }
 .container-fluid{
-    padding: 3% 10% 7%;
+    padding: 0% 0% 7%;
     
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* Navbar*/
 .navbar-brand{
-    font-family: 'Montserrat';
+  font-family: 'Montserrat';
     font-size: 2.5rem;
     font-weight: bold;
 }
 .navbar{
-    padding: 0 0 4.5rem;
+    padding: 2 0 4.5rem;
+    font-family: 'Montserrat';
+    
 }
 .some{
-    padding-bottom: 3em;
+    padding: 0% 10%;
+    position:fixed;
+    background-image: url("./images/pozadina.png"); 
+    height:80px;
+    z-index: 1;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s ease-out;
+}
+.navbar-scrolled{
+  background-image: url("./images/pozadina.png");
 }
 .nav-item{
-    padding: 0 18px;
+    padding: 0 18px;  
 }
 .nav-link{
-    font-family: 'Montserrat'!important;
+  font-family: 'Montserrat'!important;
   font-size: 1.5rem !important;
   font-weight: bold;
-  white-space: nowrap; 
+  white-space: nowrap;                       
 }
 .navbar-nav{
     align-items: flex-end;
