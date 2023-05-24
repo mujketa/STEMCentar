@@ -387,6 +387,21 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
     
     font-size: 1.4rem;
   }
+  .row{
+    padding: 20% 15%;
+  }
+  .some{
+    padding: 0% 10%;
+    position:relative;
+    background-image: url(""); 
+    height:auto;
+    z-index: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s ease-out;
+
+  }
   .logodiv{
     margin: 0 auto;
     width: 50%;
@@ -395,7 +410,7 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
       position: static;
         
   }
-
+ 
   .center{
       text-align: center;
       margin-left: 6rem;
