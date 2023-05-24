@@ -8,7 +8,7 @@ const cors = require ("cors");
 const db = mysql.createPool({ //cd C:\Users\pc\Documents\GitHub\STEMCentar\server
     host: "localhost",
     user: "root",
-    password: "mujketa7265",
+    password: "12345678",
     database: "stemcentar"
 });
 
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 
 // Handle form submission
 app.post('/submitmail', (req, res) => {
-  const { name, email, phone, age } = req.body;
+  const { name, email, phone,kurs, age } = req.body;
 
   // Create a nodemailer transporter
   const transporter = nodemailer.createTransport({
@@ -44,12 +44,13 @@ app.post('/submitmail', (req, res) => {
   const mailOptions = {
     from: 'hamzamujkan@hotmail.com',
     to: 'hamza.mujkanovic.20@size.ba',
-    subject: 'New form submission',
+    subject: 'Nova prijava na STEM kurs',
     text: `
       Ime: ${name}
       Email: ${email}
       Telefon: ${phone}
-      Godine: ${age}
+      Kurs: ${kurs}
+      Godine: ${age}    
     `,
   };
 
@@ -141,13 +142,6 @@ app.put("/api/update/:id", (req, res) => {
 //         res.status(200).json("uspjesno spremljeno u bazu");
 //     })
 // })
-
-
-    
-
-
-
-
 
 
 app.listen(5000, () =>{
