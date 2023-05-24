@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const nodemailer = require('nodemailer');
 const bodyParser = require ("body-parser");
 const mysql = require ("mysql2");
 const cors = require ("cors");
@@ -13,11 +14,58 @@ const db = mysql.createPool({ //cd C:\Users\pc\Documents\GitHub\STEMCentar\serve
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use((req,res,next)=>{
     console.log(req.path,req.method);
     next();  
   })
+
+  //----------------------------forma koja se prosljedjuje na mail ---------------------------------------
+  // Serve the HTML file with the form
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+// Handle form submission
+app.post('/submitmail', (req, res) => {
+  const { name, email, phone, age } = req.body;
+
+  // Create a nodemailer transporter
+  const transporter = nodemailer.createTransport({
+    service: 'hotmail',
+    auth: {
+      user: 'hamzamujkan@hotmail.com',
+      pass: '12345678',
+    },
+  });
+
+  // Define the email content
+  const mailOptions = {
+    from: 'hamzamujkan@hotmail.com',
+    to: 'hamza.mujkanovic.20@size.ba',
+    subject: 'New form submission',
+    text: `
+      Ime: ${name}
+      Email: ${email}
+      Telefon: ${phone}
+      Godine: ${age}
+    `,
+  };
+
+  // Send the email
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error sending email:', error);
+      res.status(500).send('Error sending email');
+    } else {
+      console.log('Email sent:', info.response);
+      res.send('Form submitted successfully');
+    }
+  });
+});
+
+//--------------------------------------------------------------------------------------------
 
 
   app.get("/api/get", (req, res) => {
@@ -85,14 +133,14 @@ app.put("/api/update/:id", (req, res) => {
 })
 
 
-  app.get("/", (req, res) =>{
-    const sqlInsert = "INSERT INTO vijesti_db(naslov, slika, tekst) VALUES ('Stem centar organizuje praksu', 'wwww.sdfsdfdsdf.gffdgfd', 'fdgfgfdgfddfgdfgdfgfdgfdgdffdgdffdgfdgfdgdfgfdgdfg')";
-    db.query(sqlInsert, (error, result) =>{
-        console.log("error", error);
-        console.log("result", result);
-        res.status(200).json("uspjesno spremljeno u bazu");
-    })
-})
+//   app.get("/", (req, res) =>{
+//     const sqlInsert = "INSERT INTO vijesti_db(naslov, slika, tekst) VALUES ('Stem centar organizuje praksu', 'wwww.sdfsdfdsdf.gffdgfd', 'fdgfgfdgfddfgdfgdfgfdgfdgdffdgdffdgfdgfdgdfgfdgdfg')";
+//     db.query(sqlInsert, (error, result) =>{
+//         console.log("error", error);
+//         console.log("result", result);
+//         res.status(200).json("uspjesno spremljeno u bazu");
+//     })
+// })
 
 
     
