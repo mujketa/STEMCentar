@@ -67,3 +67,245 @@
     <i class="social-icon fab fa-instagram"></i>
 </footer> -->
 <!-- -------------------------------------------------------------------------------------------------------------    -->
+
+<!-- FORMA 
+<section id="apply">
+  <div class="form-body">
+    <div class="form-row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Prijavi se</h3>
+                    <p>Popuni podatke ispod</p>
+                    <form action="http://localhost:5000/submitmail" method="POST" class="requires-validation" novalidate>
+                        <div class="col-md-12">
+                          <input class="form-control" type="text" name="name" placeholder="Ime i prezime" required>
+                          <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="form-control" type="email" name="email" placeholder="E-mail adresa" required>
+                            <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+                        <div class="col-md-12">
+                          <input class="form-control" type="phone" name="phone" placeholder="Broj telefona" required>
+                          <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <select name ="kurs" class="form-select mt-3" required>
+                                  <option selected disabled value="">Kursevi</option>
+                                  <option value="Programiranje">Programiranje</option>
+                                  <option value="Robotika">Robotika</option>
+                                  <option value="Elektronika">Elektronika</option>
+                                  <option value="Grafički dizajn">Grafički dizajn</option>
+                                  <option value="Kreativna matematika">Kreativna matematika</option>
+                                  <option value="Kreativna fizika">Kreativna fizika</option>
+                                  <option value="Kreativna hemija">Kreativna hemija</option>
+                          </select>
+                            <div class="invalid-feedback">Molimo odaberite kurs!</div>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <label class="mb-3 mr-1" for="age">Uzrast: </label>
+
+                            <input type="radio" class="btn-check" name="age" value="do 12 godina" id="male" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="male">do 12 godina</label>
+
+                            <input type="radio" class="btn-check" name="age" value="12-18 godina" id="female" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="female">12-18 godina</label>
+
+                            <input type="radio" class="btn-check" name="age" value="preko 18 godina" id="secret" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="secret">preko 18 godina</label>
+                            <div class="invalid-feedback mv-up">Molimo odaberite uzrast!</div>
+                        </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <label class="form-check-label">Potvrđujem da su svi podaci tačni</label>
+                      <div class="invalid-feedback">Molimo potvrdite da su svi podaci tačni!</div>
+                    </div>
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Prijavi se</button>
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div><section id="apply">
+  <div class="form-body">
+    <div class="form-row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Prijavi se</h3>
+                    <p>Popuni podatke ispod</p>
+                    <form action="http://localhost:5000/submitmail" method="POST" class="requires-validation" novalidate>
+                        <div class="col-md-12">
+                          <input class="form-control" type="text" name="name" placeholder="Ime i prezime" required>
+                          <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="form-control" type="email" name="email" placeholder="E-mail adresa" required>
+                            <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+                        <div class="col-md-12">
+                          <input class="form-control" type="phone" name="phone" placeholder="Broj telefona" required>
+                          <div class="invalid-feedback">Polje ne može biti prazno!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <select name ="kurs" class="form-select mt-3" required>
+                                  <option selected disabled value="">Kursevi</option>
+                                  <option value="Programiranje">Programiranje</option>
+                                  <option value="Robotika">Robotika</option>
+                                  <option value="Elektronika">Elektronika</option>
+                                  <option value="Grafički dizajn">Grafički dizajn</option>
+                                  <option value="Kreativna matematika">Kreativna matematika</option>
+                                  <option value="Kreativna fizika">Kreativna fizika</option>
+                                  <option value="Kreativna hemija">Kreativna hemija</option>
+                          </select>
+                            <div class="invalid-feedback">Molimo odaberite kurs!</div>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <label class="mb-3 mr-1" for="age">Uzrast: </label>
+
+                            <input type="radio" class="btn-check" name="age" value="do 12 godina" id="male" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="male">do 12 godina</label>
+
+                            <input type="radio" class="btn-check" name="age" value="12-18 godina" id="female" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="female">12-18 godina</label>
+
+                            <input type="radio" class="btn-check" name="age" value="preko 18 godina" id="secret" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="secret">preko 18 godina</label>
+                            <div class="invalid-feedback mv-up">Molimo odaberite uzrast!</div>
+                        </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <label class="form-check-label">Potvrđujem da su svi podaci tačni</label>
+                      <div class="invalid-feedback">Molimo potvrdite da su svi podaci tačni!</div>
+                    </div>
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Prijavi se</button>
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div> -->
+CSSS OD FORME
+.hideform {
+  display: none;
+}
+.form-row{
+display: flex;
+align-items: center; /* Align items vertically */
+justify-content: space-between; /* Distribute items horizontally */
+padding: 0% 27%;
+}
+.form-body{
+  background-image:url(images/Pozadinaflipped.png);
+  background-repeat:no-repeat;
+  background-size: 100%;
+  
+  
+}
+.form-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+.form-holder .form-content {
+position: relative;
+text-align: center;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-justify-content: center;
+justify-content: center;
+-webkit-align-items: center;
+align-items: center;
+padding: 60px;
+}
+.form-content .form-items {
+border: 3px solid #fff;
+padding: 40px;
+display: inline-block;
+width: 100%;
+min-width: 540px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align: left;
+-webkit-transition: all 0.4s ease;
+transition: all 0.4s ease;
+}
+.form-content h3 {
+color: #fff;
+text-align: left;
+font-size: 28px;
+font-weight: 600;
+margin-bottom: 5px;
+}
+.form-content h3.form-title {
+margin-bottom: 30px;
+}
+.form-content p {
+color: #fff;
+text-align: left;
+font-size: 17px;
+font-weight: 300;
+line-height: 20px;
+margin-bottom: 30px;
+}
+.form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
+color: #fff;
+}
+.form-content input[type=text], .form-content input[type=phone], .form-content input[type=email], .form-content select {
+width: 100%;
+padding: 9px 20px;
+text-align: left;
+border: 0;
+outline: 0;
+border-radius: 6px;
+background-color: #fff;
+font-size: 15px;
+font-weight: 300;
+color: #8D8D8D;
+-webkit-transition: all 0.3s ease;
+transition: all 0.3s ease;
+margin-top: 16px;
+}
+.form-content textarea {
+position: static !important;
+width: 100%;
+padding: 8px 20px;
+border-radius: 6px;
+text-align: left;
+background-color: #fff;
+border: 0;
+font-size: 15px;
+font-weight: 300;
+color: #8D8D8D;
+outline: none;
+resize: none;
+height: 120px;
+-webkit-transition: none;
+transition: none;
+margin-bottom: 14px;
+}
+.form-content textarea:hover, .form-content textarea:focus {
+border: 0;
+background-color: #ebeff8;
+color: #8D8D8D;
+}

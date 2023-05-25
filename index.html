@@ -203,7 +203,7 @@ type();
         </script>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
   <!-- Forma za POST -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <div class="center  col-lg-5 col-sm-9">
           <button id="close" type="button" class="btn-close" style="float: right;" aria-label="Close"></button>
           <form action="http://localhost:5000/post" method="POST">
@@ -223,7 +223,7 @@ type();
                 <button type="submit" class="btn btn-outline-light">Submit</button>
               </div>
           </form>        
-      </div>
+      </div> -->
 <!-- -------------------------------------------------------------------------------------------------------------    -->
       <!-- <div class="card">
           <img class="card-img-top" src="images/news5.jpg" alt="Card image cap">
@@ -363,10 +363,6 @@ type();
 
 <!-- Application section-->
 <section id="apply">
-  <div class="form-body">
-    <div class="form-row">
-        <div class="form-holder">
-            <div class="form-content">
                 <div class="form-items">
                     <h3>Prijavi se</h3>
                     <p>Popuni podatke ispod</p>
@@ -375,11 +371,11 @@ type();
                           <input class="form-control" type="text" name="name" placeholder="Ime i prezime" required>
                           <div class="invalid-feedback">Polje ne može biti prazno!</div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="margin-top: 15px;">
                             <input class="form-control" type="email" name="email" placeholder="E-mail adresa" required>
                             <div class="invalid-feedback">Polje ne može biti prazno!</div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="margin-top: 15px;">
                           <input class="form-control" type="phone" name="phone" placeholder="Broj telefona" required>
                           <div class="invalid-feedback">Polje ne može biti prazno!</div>
                         </div>
@@ -399,7 +395,7 @@ type();
                         </div>
 
                         <div class="col-md-12 mt-3">
-                            <label class="mb-3 mr-1" for="age">Uzrast: </label>
+                            <label id="uzrast" class="mb-3 mr-1" for="age">Uzrast: </label>
 
                             <input type="radio" class="btn-check" name="age" value="do 12 godina" id="male" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="male">do 12 godina</label>
@@ -419,22 +415,11 @@ type();
                     </div>
                         <div class="form-button mt-3">
                             <button id="submit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Prijavi se</button>
-                            <input type="submit" value="Submit">
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-  </div>
+  
 
-  <!-- index.html -->
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Form Example</title>
-</head>
-<body>
   <!-- <h1>Contact Form</h1>
 
   <form action="http://localhost:5000/submitmail" method="POST">
@@ -449,13 +434,69 @@ type();
 
     <input type="submit" value="Submit">
   </form> -->
-</body>
-</html>
 
 </section>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
 
 <!-- Footer -->
+<footer class="text-center text-white" style="background-image: url('images/pozadinafooter.png'); background-size: cover; height: 18rem; background-repeat: no-repeat; align-content: end;">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1" 
+        id="icon-link"
+        href="https://www.facebook.com/stemcentar/"
+        role="button"
+        target=”_blank”
+        data-mdb-ripple-color="dark"
+        ><i class="fa-brands fa-facebook fa-flip fa-lg" style="color: #ffffff;"></i>
+        </a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        id="icon-link"
+        href="https://twitter.com/udruzenje_input?lang=en"
+        role="button"
+        target=”_blank”
+        data-mdb-ripple-color="dark"
+        ><i class="fa-brands fa-twitter fa-flip fa-lg" style="color: #ffffff;"></i>
+      </a>
+
+      <!-- Youtube -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        id="icon-link"
+        target=”_blank”
+        href="https://www.youtube.com/@CentarzamladeINPUT"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fa-brands fa-youtube fa-flip fa-lg" style="color: #ffffff;"></i>
+      </a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://www.instagram.com/stemcentar.ze/?hl=en"
+        role="button"
+        target=”_blank”
+        data-mdb-ripple-color="dark"
+        ><i class="fa-brands fa-instagram fa-flip fa-lg" style="color: #ffffff;"></i>
+      </a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright: STEM Centar
+  </div>
+  <!-- Copyright -->
+</footer>
 </body>
 
 <script src="./script.js"></script>

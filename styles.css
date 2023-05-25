@@ -195,6 +195,7 @@ h5{
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display:inline-block;
   transition: 0.3s;
   border: none;
   &:hover {
@@ -252,115 +253,45 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
 /* Application section */
-.hideform {
-    display: none;
+#apply{
+  
+  padding: 10% 0%;
+  
 }
-.form-row{
-  display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Distribute items horizontally */
-  padding: 0% 27%;
+.form-items{
+  padding: 2% 2%;
+  border: 3px solid white;
+  width: 35%;
+  margin: 0 auto;
+  border-radius: 5%;
 }
-.form-body{
-    background-image:url(images/Pozadinaflipped.png);
-    background-repeat:no-repeat;
-    background-size: 100%;
-    
-    
-}
-.form-holder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-}
-.form-holder .form-content {
-  position: relative;
-  text-align: center;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  padding: 60px;
-}
-.form-content .form-items {
-  border: 3px solid #fff;
-  padding: 40px;
-  display: inline-block;
-  width: 100%;
-  min-width: 540px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  text-align: left;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-.form-content h3 {
+.invalid-feedback{
   color: #fff;
   text-align: left;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 18px;
   margin-bottom: 5px;
 }
-.form-content h3.form-title {
-  margin-bottom: 30px;
-}
-.form-content p {
+.form-check-label{
   color: #fff;
   text-align: left;
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 20px;
-  margin-bottom: 30px;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
-.form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
+#uzrast{
   color: #fff;
-}
-.form-content input[type=text], .form-content input[type=phone], .form-content input[type=email], .form-content select {
-  width: 100%;
-  padding: 9px 20px;
   text-align: left;
-  border: 0;
-  outline: 0;
-  border-radius: 6px;
-  background-color: #fff;
-  font-size: 15px;
-  font-weight: 300;
-  color: #8D8D8D;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  margin-top: 16px;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
-.form-content textarea {
-  position: static !important;
-  width: 100%;
-  padding: 8px 20px;
-  border-radius: 6px;
-  text-align: left;
-  background-color: #fff;
-  border: 0;
-  font-size: 15px;
-  font-weight: 300;
-  color: #8D8D8D;
-  outline: none;
-  resize: none;
-  height: 120px;
-  -webkit-transition: none;
-  transition: none;
-  margin-bottom: 14px;
+.form-items h3{
+  color: #fff;
+text-align: left;
+font-size: 28px;
+font-weight: 600;
+margin-bottom: 5px;
 }
-.form-content textarea:hover, .form-content textarea:focus {
-  border: 0;
-  background-color: #ebeff8;
-  color: #8D8D8D;
+.form-button{
+  text-align: center;
 }
 .mv-up{
   margin-top: -9px !important;
@@ -369,7 +300,15 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
 .invalid-feedback{
   color: #ff606e;
 }
-
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* FOOTER */
+#icon-link{
+  padding-right: 10%;
+  size: 15rem;
+}
+.mb-4{
+  margin-top: 9%;
+}
 /* ----------------------------------------------------------------------------------------------------------------------- */
   
 /* responsive */
@@ -424,12 +363,8 @@ transform: translateX(0%); /* Jako bitno za carousel animaciju */
     padding-top: 8%;
     
   }
-  .form-body{
-    background-position: bottom;
-    background-size: 200%;
-  }
-  .form-content{
-    height: 50%;
+  .form-items{
+    width:85%;
   }
 
 
