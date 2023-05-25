@@ -203,7 +203,7 @@ type();
         </script>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
   <!-- Forma za POST -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <div class="center  col-lg-5 col-sm-9">
           <button id="close" type="button" class="btn-close" style="float: right;" aria-label="Close"></button>
           <form action="http://localhost:5000/post" method="POST">
@@ -223,7 +223,7 @@ type();
                 <button type="submit" class="btn btn-outline-light">Submit</button>
               </div>
           </form>        
-      </div> -->
+      </div>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
       <!-- <div class="card">
           <img class="card-img-top" src="images/news5.jpg" alt="Card image cap">
@@ -370,7 +370,7 @@ type();
                 <div class="form-items">
                     <h3>Prijavi se</h3>
                     <p>Popuni podatke ispod</p>
-                    <form class="requires-validation" novalidate>
+                    <form action="http://localhost:5000/submitmail" method="POST" class="requires-validation" novalidate>
                         <div class="col-md-12">
                           <input class="form-control" type="text" name="name" placeholder="Ime i prezime" required>
                           <div class="invalid-feedback">Polje ne može biti prazno!</div>
@@ -385,15 +385,15 @@ type();
                         </div>
 
                         <div class="col-md-12">
-                            <select class="form-select mt-3" required>
+                            <select name ="kurs" class="form-select mt-3" required>
                                   <option selected disabled value="">Kursevi</option>
-                                  <option value="prog">Programiranje</option>
-                                  <option value="robo">Robotika</option>
-                                  <option value="elekto">Elektronika</option>
-                                  <option value="grafik">Grafički dizajn</option>
-                                  <option value="mat">Kreativna matematika</option>
-                                  <option value="fizik">Kreativna fizika</option>
-                                  <option value="hemi">Kreativna hemija</option>
+                                  <option value="Programiranje">Programiranje</option>
+                                  <option value="Robotika">Robotika</option>
+                                  <option value="Elektronika">Elektronika</option>
+                                  <option value="Grafički dizajn">Grafički dizajn</option>
+                                  <option value="Kreativna matematika">Kreativna matematika</option>
+                                  <option value="Kreativna fizika">Kreativna fizika</option>
+                                  <option value="Kreativna hemija">Kreativna hemija</option>
                           </select>
                             <div class="invalid-feedback">Molimo odaberite kurs!</div>
                         </div>
@@ -401,13 +401,13 @@ type();
                         <div class="col-md-12 mt-3">
                             <label class="mb-3 mr-1" for="age">Uzrast: </label>
 
-                            <input type="radio" class="btn-check" name="age" id="male" autocomplete="off" required>
+                            <input type="radio" class="btn-check" name="age" value="do 12 godina" id="male" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="male">do 12 godina</label>
 
-                            <input type="radio" class="btn-check" name="age" id="female" autocomplete="off" required>
+                            <input type="radio" class="btn-check" name="age" value="12-18 godina" id="female" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="female">12-18 godina</label>
 
-                            <input type="radio" class="btn-check" name="age" id="secret" autocomplete="off" required>
+                            <input type="radio" class="btn-check" name="age" value="preko 18 godina" id="secret" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="secret">preko 18 godina</label>
                             <div class="invalid-feedback mv-up">Molimo odaberite uzrast!</div>
                         </div>
@@ -419,6 +419,7 @@ type();
                     </div>
                         <div class="form-button mt-3">
                             <button id="submit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Prijavi se</button>
+                            <input type="submit" value="Submit">
                         </div>
                     </form>
                 </div>
@@ -426,6 +427,31 @@ type();
         </div>
     </div>
   </div>
+
+  <!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+</head>
+<body>
+  <!-- <h1>Contact Form</h1>
+
+  <form action="http://localhost:5000/submitmail" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <input type="submit" value="Submit">
+  </form> -->
+</body>
+</html>
+
 </section>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
 
