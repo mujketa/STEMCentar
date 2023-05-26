@@ -179,11 +179,16 @@ p{
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
 /* News */
-.container-news{
-  background-color: black;
+/* .container-news{
+  
   padding-bottom: 5%;
   padding-top: 15%;
-}
+  align-content: center;
+}*/
+#vijesti{
+  padding: 2rem;
+  padding-left:2.5rem;
+} 
 h1 {
   color: #fff;
   padding: 10px 0;
@@ -195,9 +200,11 @@ h5{
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display:inline-block;
+  height: 37rem;
   transition: 0.3s;
   border: none;
+  width:24rem;
+  margin-bottom: 2rem;
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
   }
@@ -307,7 +314,11 @@ margin-bottom: 5px;
   size: 15rem;
 }
 .mb-4{
-  margin-top: 9%;
+  margin-top: 7%;
+}
+#adminsubmit{
+  margin-left:20px;
+
 }
 /* ----------------------------------------------------------------------------------------------------------------------- */
   
