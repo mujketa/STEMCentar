@@ -19,12 +19,10 @@ margin-bottom: 5px;
     background-image: url(/images/pozadina.png);
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: 10%;
-    
+    margin-top: 10%;  
 }
 .topbar{
   height: 100px;
-
 }
 .box1{
   display:inline-flex;
@@ -32,26 +30,22 @@ margin-bottom: 5px;
   padding-left: 15px;
   padding-top: 30px;
   .btn-dark{
-   
     width:100px;
   }
-
 }
-
 .box2{
   display:inline-flex;
   width:auto;
   padding-top: 10px;
-   
 }
 .box3{
+  padding-top: 30px;
   .submit-btn{
-    
     width:100%;
     }
 }
 .mb-3{
-  padding-top: 30px;
+  padding-top: 10px;
 }
 .form-control{
   background-color: rgb(227, 227, 227)  ;

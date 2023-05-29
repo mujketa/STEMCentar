@@ -2,9 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
-
 body{
   font-family: "Montserrat";
   overflow-x: hidden;
@@ -46,8 +44,6 @@ p{
   padding: 0% 0% 7%;
   height: 55rem;
 }
-
-/* Title*/
 .naslov{
 display: flex;
 align-items: center;
@@ -63,8 +59,7 @@ padding: 20% 15%;
 }
 .abouth3{
   text-align: justify;
-  color: #fff;
-  
+  color: #fff; 
 }
 .aboutText{
   margin: auto;
@@ -72,17 +67,6 @@ padding: 20% 15%;
   align-items: center;
   width: 100%;
   padding-top: 1rem;   
-}
-
-/* Grid images */
-.container{
-  padding: 2rem;
-}
-.row{
-  padding-bottom: 1.5rem;
-}
-.img-thumbnail{
-  height: 18rem;
 }
 
 /* Navbar*/
@@ -94,7 +78,6 @@ font-family: 'Montserrat';
 .navbar{
   padding: 2 0 4.5rem;
   font-family: 'Montserrat';
-  
 }
 .some{
   padding: 0% 10%;
@@ -122,7 +105,21 @@ white-space: nowrap;
 .navbar-nav{
   align-items: flex-end;
 }
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
+/* Grid images */
+.container{
+  padding: 2rem;
+}
+.row{
+  padding-bottom: 1.5rem;
+}
+.img-thumbnail{
+  height: 15rem;
+  border-radius: 4%;
+  background-color: transparent;
+  border-color: transparent;
+}
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
 /* Visit section */
@@ -149,9 +146,7 @@ margin: 5% 3% 5% 0%;
 
 /* Application section */
 #apply{
-
 padding: 10% 0%;
-
 }
 .form-items{
 padding: 2% 2%;
@@ -196,6 +191,7 @@ margin-bottom: 8px !important;
 color: #ff606e;
 }
 /* ----------------------------------------------------------------------------------------------------------------------- */
+
 /* FOOTER */
 #icon-link{
 padding-right: 10%;
@@ -206,7 +202,6 @@ margin-top: 7%;
 }
 #adminsubmit{
 margin-left:20px;
-
 }
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
@@ -248,7 +243,6 @@ margin-left:20px;
     position: static;
       
 }
-
 .center{
     text-align: center;
     margin-left: 6rem;
@@ -265,6 +259,4 @@ margin-left:20px;
 .form-items{
   width:85%;
 }
-
-
 }
