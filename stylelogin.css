@@ -2,17 +2,24 @@
     display: none;
   }
 .container {
-  font-family: arial;
-  font-size: 24px;
-  width: 500px;
-  height: 500px;
-  outline: solid 3px rgb(43, 43, 44);
-  border-radius: 0%;
-  margin-top: 150px;
-  background-color: white;
+  padding: 2% 2%;
+  border: 3px solid white;
+  width: 35%;
+  margin: 0 auto;
+  border-radius: 5%;
 }
-.body1{
-    background-color: #403d3d;
+.form-label, .container h1{
+color: #fff;
+text-align: left;
+font-size: 28px;
+font-weight: 600;
+margin-bottom: 5px;
+}
+.body{
+    background-image: url(/images/pozadina.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 10%;
     
 }
 .topbar{
@@ -38,7 +45,7 @@
    
 }
 .box3{
-  .btn-dark{
+  .submit-btn{
     
     width:100%;
     }
