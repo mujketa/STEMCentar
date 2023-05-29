@@ -203,7 +203,6 @@ h5{
   height: 37rem;
   transition: 0.3s;
   border: none;
-  width:24rem;
   margin-bottom: 2rem;
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -360,7 +359,6 @@ margin-bottom: 5px;
       position: static;
         
   }
- 
   .center{
       text-align: center;
       margin-left: 6rem;
@@ -377,6 +375,11 @@ margin-bottom: 5px;
   .form-items{
     width:85%;
   }
+  /* Vijesti kartice */
+  #vijesti{
+    padding: 2rem;
+    padding-left:2rem;
+  } 
 
 
 }
