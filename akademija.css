@@ -43,13 +43,19 @@
   }
   .container-fluid{
     padding: 0% 0% 7%;
-    height: 55rem;
+    height: 35rem;
   }
   .naslov{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20% 15%;
+  }
+  .text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 5%;
   }
   
   /* About us text */
@@ -68,6 +74,20 @@
     align-items: center;
     width: 100%;
     padding-top: 1rem;   
+  }
+
+  /* Grid images */
+  .container{
+    padding: 2rem;
+  }
+  .row{
+    padding-bottom: 1.5rem;
+  }
+  .img-thumbnail{
+    height: 15rem;
+    border-radius: 4%;
+    background-color: transparent;
+    border-color: transparent;
   }
   
   /* Navbar*/
