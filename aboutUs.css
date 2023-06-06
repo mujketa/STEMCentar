@@ -59,7 +59,8 @@ padding: 20% 15%;
 }
 .abouth3{
   text-align: justify;
-  color: #fff; 
+  color: #fff;
+  font-weight: normal;
 }
 .aboutText{
   margin: auto;
