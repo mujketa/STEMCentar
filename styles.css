@@ -176,6 +176,12 @@ p{
 .navbar-nav{
     align-items: flex-end;
 }
+/*-------------------------------------------------------------------------------------------------------------------------*/
+#adminforma{
+  color:white;
+  padding-top:18%;
+  margin:0 auto;
+}
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
 /* News */
@@ -220,6 +226,17 @@ h5{
 .card-title{
   font-style: italic;
   font-family: "Montserrat";
+}
+.card-info{
+  position: absolute;
+  bottom: 0;
+  padding-left: 15%;
+}
+.dugmad{
+  padding-left: 5rem;
+  bottom:0;
+  position: absolute;
+  padding-bottom: 3rem;
 }
 /* ----------------------------------------------------------------------------------------------------------------------- */
 

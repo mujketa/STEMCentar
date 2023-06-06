@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <title>STEMCentar</title> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- font awesome icons -->
+  <script src="https://kit.fontawesome.com/f5f9ad6fc8.js" crossorigin="anonymous"></script> 
+  <script src="https://kit.fontawesome.com/824871fce1.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+  
+</head>
+<body>
+
+    <section id="title">
+        <div class="container-fluid" >
+      
+          <!-- Navbar -->
+          <div class="some">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+              <a class="navbar-brand" href="">STEMCentar</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Početna</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="aboutUs.html">O nama</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Programi
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><a class="dropdown-item" href="akademija.html">STEM Akademija</a></li>
+                      <li><a class="dropdown-item" href="camp.html">STEM Camp</a></li>
+                      <li><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Ostalo</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="programiranje.html">Programiranje</a>
+                          <a class="dropdown-item" href="robotika.html">Robotika</a>
+                          <a class="dropdown-item" href="elektronika.html">Elektronika</a>
+                          <a class="dropdown-item" href="graficki-dizajn.html">Graficki dizajn</a>
+                          <a class="dropdown-item" href="matematika.html">Kreativna matematika</a>
+                          <a class="dropdown-item" href="fizika.html">Kreativna fizika</a>
+                          <a class="dropdown-item" href="hemija.html">Kreativna hemija</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#apply">Prijava</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#visit">Lokacija</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <!-- -------------------------------------------------------------------------------------------------------------    -->
+  <!-- Forma za POST -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class="center  col-lg-5 col-sm-9" id="adminforma">
+    <h3>Dodaj članak</h3>
+      <form action="http://localhost:5000/post" method="POST">
+        <div class="mb-3">
+          <label class="col-form-label">Naslov:</label>
+          <input type="text" class="form-control" name="naslov" required>
+        </div>
+        <div class="mb-3">
+          <label  class="col-form-label">Slika:</label>
+          <input type="text" class="form-control" name="slika" required>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label">Tekst:</label>
+            <input type="text" class="form-control" name="tekst" required>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-light">Submit</button>
+          </div>
+      </form>        
+  </div>
+        </section>
+ 
+<!-- -------------------------------------------------------------------------------------------------------------    -->        
+<!-- News -->
+<!-- <div class="container-news"> -->
+  
+  <div class="container">
+    <div class="text-center">
+      <h1>Najnovija dešavanja</h1>
+    </div>
+    <div class="row" id="vijesti">
+      <script>
+        async function getData() {
+          //prikaz stavki (GET)
+        
+          const response = await fetch("http://localhost:5000/api/get");
+          const data = await response.json();
+          console.log(data);
+          for (let i = 0; i < data.length; i++) {
+            let tempHtml = `
+
+        <div class="col-sm-4">
+          <div class="card">
+              <img class="card-img-top" src="${data[i].slika}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><span id="nam0">${data[i].naslov}</span></h5>
+              <p class="card-text"><span id="pri0">${data[i].tekst}</span></p>
+              <div class="dugmad">
+              <button id="uredi" type="submit" class="submit-btn btn btn-outline-dark btn-lg add-button">Uredi</button>
+              <button id="brisi" type="submit" class="submit-btn btn btn-outline-dark btn-lg add-button">Briši</button>
+              </div>
+              <p class="card-info"><small class="text-muted"><i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
+            </div>
+          </div>
+        </div>
+          `;
+            document
+              .querySelector("#vijesti")
+              .insertAdjacentHTML("beforeend", tempHtml);
+          }
+        }
+        getData();
+        // var spanElement = document.getElementById("pri0");
+        // var maxLength = 10;
+        // var fullText = spanElement.textContent;
+        // var truncatedText = fullText.substring(0, maxLength) + "...";
+        // spanElement.textContent = truncatedText;
+        </script>
+    </div>
+</div>
+
+    
+  </div>
+<!-- </div> -->
+<!-- -------------------------------------------------------------------------------------------------------------    -->
+
+
+  <!-- <h1>Contact Form</h1>
+
+  <form action="http://localhost:5000/submitmail" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <input type="submit" value="Submit">
+  </form> -->
+
+
+<!-- -------------------------------------------------------------------------------------------------------------    -->
+
+<!-- Footer -->
+<footer class="text-center text-white" style="background-image: url('images/pozadinafooter.png'); background-size: cover; height: 18rem; background-repeat: no-repeat; align-content: end;">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1" 
+        id="icon-link"
+        href="https://www.facebook.com/stemcentar/"
+        role="button"
+        target=”_blank”
+        data-mdb-ripple-color="dark"
+        ><i class="fa-brands fa-facebook fa-flip fa-lg " style="color: #ffffff;--fa-animation-duration: 2s;"></i>
+        </a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        id="icon-link"
+        href="https://twitter.com/udruzenje_input?lang=en"
+        role="button"
+        target=”_blank”
+        data-mdb-ripple-color="dark"
+        ><i class="fa-brands fa-twitter fa-flip fa-lg" style="color: #ffffff;--fa-animation-duration: 2s;"></i>
+      </a>
+
+      <!-- Youtube -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        id="icon-link"
+        target=”_blank”
+        href="https://www.youtube.com/@CentarzamladeINPUT"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fa-brands fa-youtube fa-flip fa-lg" style="color: #ffffff;--fa-animation-duration: 2s;"></i>
+      </a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://www.instagram.com/stemcentar.ze/?hl=en"
+        role="button"
+        target=”_blank”
+        data-mdb-ripple-color="dark"
+        ><i class="fa-brands fa-instagram fa-flip fa-lg" style="color: #ffffff;--fa-animation-duration: 2s;"></i>
+      </a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright: STEM Centar
+    <a href="login.html" id="adminsubmit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Login</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</body>
+
+<script src="./script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
+
+</html>

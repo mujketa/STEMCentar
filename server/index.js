@@ -8,7 +8,7 @@ const cors = require ("cors");
 const db = mysql.createPool({ //cd C:\Users\pc\Documents\GitHub\STEMCentar\server
     host: "localhost",
     user: "root",
-    password: "12345678",
+    password: "0000",
     database: "stemcentar"
 });
 
