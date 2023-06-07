@@ -8,7 +8,7 @@ const cors = require ("cors");
 const db = mysql.createPool({ //cd C:\Users\pc\Documents\GitHub\STEMCentar\server
     host: "localhost",
     user: "root",
-    password: "0000",
+    password: "mujketa7265",
     database: "stemcentar"
 });
 
@@ -20,6 +20,7 @@ app.use((req,res,next)=>{
     console.log(req.path,req.method);
     next();  
   })
+ 
 
   //----------------------------forma koja se prosljedjuje na mail ---------------------------------------
   // Serve the HTML file with the form
@@ -89,12 +90,22 @@ app.post('/submitmail', (req, res) => {
 
 
 app.post('/post', (req, res) => {
+    //trenutni datum koji ide na kartice
+    var currentDate = new Date();
+    var day = String(currentDate.getDate()).padStart(2, '0');
+    var month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    var year = currentDate.getFullYear();
+    var formattedDate = day + '.' + month + '.' + year + '.';
+
+
     const formData = {
       naslov: req.body.naslov,
       slika: req.body.slika,
-      tekst: req.body.tekst
+      tekst: req.body.tekst,
+      datum: formattedDate
     };
   
+    // const sql = `INSERT INTO vijesti_db (datum) VALUES ('${currentDate}')`;
     db.query('INSERT INTO vijesti_db SET ?', formData, (error, results, fields) => {
       if (error) {
         console.error('Error inserting data into MySQL: ' + error.stack);
@@ -102,6 +113,7 @@ app.post('/post', (req, res) => {
       }
       // Handle successful data insertion
       console.log('Data inserted successfully!');
+      console.log(currentDate);
     });
   });
 
