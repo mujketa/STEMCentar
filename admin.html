@@ -36,36 +36,13 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="index.html">Početna</a>
+                    <a class="nav-link" href="#adminforma">Dodaj vijest</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="aboutUs.html">O nama</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Programi
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                      <li><a class="dropdown-item" href="akademija.html">STEM Akademija</a></li>
-                      <li><a class="dropdown-item" href="camp.html">STEM Camp</a></li>
-                      <li><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Ostalo</a>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="programiranje.html">Programiranje</a>
-                          <a class="dropdown-item" href="robotika.html">Robotika</a>
-                          <a class="dropdown-item" href="elektronika.html">Elektronika</a>
-                          <a class="dropdown-item" href="graficki-dizajn.html">Graficki dizajn</a>
-                          <a class="dropdown-item" href="matematika.html">Kreativna matematika</a>
-                          <a class="dropdown-item" href="fizika.html">Kreativna fizika</a>
-                          <a class="dropdown-item" href="hemija.html">Kreativna hemija</a>
-                        </div>
-                      </li>
-                    </ul>
+                    <a class="nav-link" href="#vijesti">Najnovija dešavanja</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#apply">Prijava</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#visit">Lokacija</a>
+                    <a href="index.html" id="adminsubmit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Log Out</a>
                   </li>
                 </ul>
               </div>
@@ -75,7 +52,7 @@
   <!-- Forma za POST -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <div class="center  col-lg-5 col-sm-9" id="adminforma">
-    <h3>Dodaj članak</h3>
+    <h3>Dodaj vijest</h3>
       <form action="http://localhost:5000/post" method="POST">
         <div class="mb-3">
           <label class="col-form-label">Naslov:</label>
@@ -225,7 +202,6 @@
   <!-- Copyright -->
   <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2023 Copyright: STEM Centar
-    <a href="login.html" id="adminsubmit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Login</a>
   </div>
   <!-- Copyright -->
 </footer>

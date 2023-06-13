@@ -42,19 +42,28 @@
                     <a class="nav-link" href="aboutUs.html">O nama</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" aria-current="page" href="#sekcijatest" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Programi
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                      <li><a class="dropdown-item" href="akademija.html">STEM Akademija</a></li>
+                    <div class="dropdown">
+                      <a class="nav-link dropdown-toggle" href="" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Programi
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="akademija.html">STEM Akademija</a></li>
                       <li><a class="dropdown-item" href="camp.html">STEM Camp</a></li>
-                      <li><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Edukacije</a>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="scratch.html">Scratch</a>
-                          <a class="dropdown-item" href="appInventor.html">AppInventor</a>
-                        </div>
-                      </li>
-                    </ul>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Edukacije &raquo;
+                          </a>
+                          <ul class="dropdown-menu dropdown-submenu">
+                            <li>
+                              <a class="dropdown-item" href="scratch.html">Scratch</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="appInventor.html">AppInventor</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#apply">Prijava</a>
@@ -162,14 +171,11 @@
 
                         <div class="col-md-12">
                             <select name ="kurs" class="form-select mt-3" required>
-                                  <option selected disabled value="">Kursevi</option>
-                                  <option value="Programiranje">Programiranje</option>
-                                  <option value="Robotika">Robotika</option>
-                                  <option value="Elektronika">Elektronika</option>
-                                  <option value="Grafički dizajn">Grafički dizajn</option>
-                                  <option value="Kreativna matematika">Kreativna matematika</option>
-                                  <option value="Kreativna fizika">Kreativna fizika</option>
-                                  <option value="Kreativna hemija">Kreativna hemija</option>
+                              <option selected disabled value="">Programi</option>
+                              <option value="STEM Akademija">STEM Akademija</option>
+                              <option value="STEM Camp">STEM Camp</option>
+                              <option value="Scratch">Scratch</option>
+                              <option value="AppInventor">AppInventor</option>
                           </select>
                             <div class="invalid-feedback">Molimo odaberite kurs!</div>
                         </div>
