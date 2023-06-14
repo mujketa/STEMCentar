@@ -98,6 +98,7 @@
             <div class="card-body">
               <h5 class="card-title"><span id="nam0">${data[i].naslov}</span></h5>
               <p class="card-text"><span id="pri0">${data[i].tekst}</span></p>
+              <a href="/index.html" class="vise">... vidi više</a>
               <div class="dugmad">
                 <button type="button" onclick="fillEditData(${data[i].id_vijesti})" class="btn btn-warning fillData" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
               <button id="brisi" onclick="deleteCard(${data[i].id_vijesti})" type="submit" class="submit-btn btn btn-outline-dark btn-lg add-button">Briši</button>
