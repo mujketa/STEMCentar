@@ -64,7 +64,7 @@
         </div>
         <div class="mb-3">
             <label class="col-form-label">Tekst:</label>
-            <input type="text" class="form-control" name="tekst" required>
+            <input type="text" class="form-control" id="poljetekst" name="tekst" required>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-outline-light">Submit</button>
@@ -76,50 +76,73 @@
 <!-- -------------------------------------------------------------------------------------------------------------    -->        
 <!-- News -->
 <!-- <div class="container-news"> -->
-  
   <div class="container">
     <div class="text-center">
       <h1>Najnovija dešavanja</h1>
     </div>
     <div class="row" id="vijesti">
-      <script>
-        async function getData() {
-          //prikaz stavki (GET)
-        
-          const response = await fetch("http://localhost:5000/api/get");
-          const data = await response.json();
-          console.log(data);
-          for (let i = 0; i < data.length; i++) {
-            let tempHtml = `
+<!-- VIDI VISE MODAL----------------------------------------------------------------------------------------------------- -->
+<div class="modal fade" id="vidivisemodal" tabindex="-1" aria-labelledby="vidivisemodalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="vidivisemodalLabel">Vidi više</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="popupData"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -------------------------------------------------------------------------------------------------------------- -->
+<script>
+  async function getData() {
+    // prikaz stavki (GET)
+    const response = await fetch("http://localhost:5000/api/get");
+    const data = await response.json();
+    console.log(data);
 
+    for (let i = 0; i < data.length; i++) {
+      let tempHtml = `
         <div class="col-sm-4">
           <div class="card">
-              <img class="card-img-top" src="${data[i].slika}" alt="Card image cap">
+            <img id="cardslika${i}" class="card-img-top" src="${data[i].slika}" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title"><span id="nam0">${data[i].naslov}</span></h5>
-              <p class="card-text"><span id="pri0">${data[i].tekst}</span></p>
-              <a href="/index.html" class="vise">... vidi više</a>
+              <h5 class="card-title"><span id="nam${i}">${data[i].naslov}</span></h5>
+              <p class="card-text"><span id="pri${i}">${data[i].tekst}</span></p>
+              <a href="#" class="vise" onclick="showPopup(${i})" data-bs-toggle="modal" data-bs-target="#vidivisemodal" data-bs-whatever="@getbootstrap">... vidi više</a>
               <div class="dugmad">
-                <button type="button" onclick="fillEditData(${data[i].id_vijesti})" class="btn btn-warning fillData" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
-              <button id="brisi" onclick="deleteCard(${data[i].id_vijesti})" type="submit" class="submit-btn btn btn-outline-dark btn-lg add-button">Briši</button>
+                <button type="button" onclick="fillEditData(${data[i].id_vijesti})" class="submit-btn btn btn-outline-dark btn-lg add-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
+                <button id="brisi" onclick="deleteCard(${data[i].id_vijesti})" type="submit" class="submit-btn btn btn-outline-dark btn-lg add-button">Briši</button>
               </div>
-              <p class="card-info"><small class="text-muted"><i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>
+              <p class="card-info"><small class="text-muted"><i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>${data[i].datum}</small></p>
             </div>
           </div>
         </div>
-          `;
-            document
-              .querySelector("#vijesti")
-              .insertAdjacentHTML("beforeend", tempHtml);
-          }
-        }
-        getData();
-        // var spanElement = document.getElementById("pri0");
-        // var maxLength = 10;
-        // var fullText = spanElement.textContent;
-        // var truncatedText = fullText.substring(0, maxLength) + "...";
-        // spanElement.textContent = truncatedText;
-        </script>
+      `;
+      document.querySelector("#vijesti").insertAdjacentHTML("beforeend", tempHtml);
+    }
+  }
+  getData();
+
+  function showPopup(index) {
+    var popupData = document.getElementById("popupData");
+
+    // Get the data from the corresponding card
+    var naslov = document.getElementById("nam" + index).textContent;
+    var tekst = document.getElementById("pri" + index).textContent;
+    var slika = document.getElementById("cardslika" + index).getAttribute("src");
+
+    // Set the data in the popup
+    popupData.innerHTML = `
+      <h5>${naslov}</h5>
+      <img class="vvslika" src="${slika}" alt="Card image">
+      <p>${tekst}</p>
+    `;
+  }
+</script>
+
     </div>
 </div>
 
@@ -147,7 +170,7 @@
 
 <!-- -------------------------------------------------------------------------------------------------------------    -->
 
- <!--MODAL -->
+ <!--MODAL FORMA ZA IZMJENU-->
 
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -196,7 +219,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="editCards(6)">Submitt</button>
+        <button type="button" class="btn btn-primary" onclick="editCards(6)">Submit</button>
       </div>
     </div>
   </div>

@@ -187,33 +187,62 @@ type();
       <h1>Najnovija dešavanja</h1>
     </div>
     <div class="row" id="vijesti">
+  <!-- VIDI VISE MODAL----------------------------------------------------------------------------------------------------- -->
+<div class="modal fade" id="vidivisemodal" tabindex="-1" aria-labelledby="vidivisemodalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="vidivisemodalLabel">Vidi više</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="popupData"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -------------------------------------------------------------------------------------------------------------- -->
       <script>
         async function getData() {
-          //prikaz stavki (GET)
-        
-          const response = await fetch("http://localhost:5000/api/get");
-          const data = await response.json();
-          console.log(data);
-          for (let i = 0; i < data.length; i++) {
-            let tempHtml = `
+    // prikaz stavki (GET)
+    const response = await fetch("http://localhost:5000/api/get");
+    const data = await response.json();
+    console.log(data);
 
+    for (let i = 0; i < data.length; i++) {
+      let tempHtml = `
         <div class="col-sm-4">
           <div class="card">
-              <img class="card-img-top" src="${data[i].slika}" alt="Card image cap">
+            <img id="cardslika${i}" class="card-img-top" src="${data[i].slika}" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title"><span id="nam0">${data[i].naslov}</span></h5>
-              <p class="card-text"><span id="pri0">${data[i].tekst}</span></p>
-              <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>${data[i].datum}</small></p>
+              <h5 class="card-title"><span id="nam${i}">${data[i].naslov}</span></h5>
+              <p class="card-text"><span id="pri${i}">${data[i].tekst}</span></p>
+              <a href="#" class="vise" onclick="showPopup(${i})" data-bs-toggle="modal" data-bs-target="#vidivisemodal" data-bs-whatever="@getbootstrap">... vidi više</a>
+              <p class="card-info"><small class="text-muted"><i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>${data[i].datum}</small></p>
             </div>
           </div>
         </div>
-          `;
-            document
-              .querySelector("#vijesti")
-              .insertAdjacentHTML("beforeend", tempHtml);
-          }
-        }
-        getData();
+      `;
+      document.querySelector("#vijesti").insertAdjacentHTML("beforeend", tempHtml);
+    }
+  }
+  getData();
+
+  function showPopup(index) {
+    var popupData = document.getElementById("popupData");
+
+    // Get the data from the corresponding card
+    var naslov = document.getElementById("nam" + index).textContent;
+    var tekst = document.getElementById("pri" + index).textContent;
+    var slika = document.getElementById("cardslika" + index).getAttribute("src");
+
+    // Set the data in the popup
+    popupData.innerHTML = `
+      <h5>${naslov}</h5>
+      <img class="vvslika" src="${slika}" alt="Card image">
+      <p>${tekst}</p>
+    `;
+  }
         </script>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
   <!-- Forma za POST -->
