@@ -5,6 +5,10 @@ const bodyParser = require ("body-parser");
 const mysql = require ("mysql2");
 const cors = require ("cors");
 
+//TODOOOOOOOO
+//napravit hotmail
+//provjerit radil mail jer sam zakomentariso
+
 const db = mysql.createPool({ //cd C:\Users\pc\Documents\GitHub\STEMCentar\server
     host: "localhost",
     user: "root",
@@ -102,7 +106,7 @@ app.post('/post', (req, res) => {
       naslov: req.body.naslov,
       slika: req.body.slika,
       tekst: req.body.tekst,
-      datum: formattedDate
+      // datum: formattedDate
     };
   
     // const sql = `INSERT INTO vijesti_db (datum) VALUES ('${currentDate}')`;
