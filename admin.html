@@ -122,13 +122,13 @@
           </div>
           <div class="mb-3">
               <label class="col-form-label">Tekst:</label>
-              <input type="text" class="form-control"  id="card-tekst" >
+              <textarea type="text" style="height:12rem" class="form-control"  id="card-tekst" ></textarea>
             </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="editCards(),alert('Uspješno dodano'), osvjeziStranicu()">Submit</button>
+        <button type="button" class="btn btn-primary" onclick="editCards(),alert('Uspješno ste izmijenili vijest'), osvjeziStranicu()">Submit</button>
       </div>
     </div>
   </div>
@@ -142,13 +142,13 @@
     const data = await response.json();
     console.log(data);
 
-    for (let i = 0; i < data.length; i++) {
+    for (let i = data.length - 1; i >= 0; i--) {
       let tempHtml = `
         <div class="col-sm-4">
           <div class="card">
             <img id="cardslika${i}" class="card-img-top" src="${data[i].slika}" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text"><span id="pri${i}">${data[i].id_vijesti}</span></p>
+              <p class="card-text" style="display: none;"><span id="pri${i}">${data[i].id_vijesti}</span></p>
               <h5 class="card-title"><span id="nam${i}">${data[i].naslov}</span></h5> 
               <p class="card-text"><span id="prii${i}">${data[i].tekst}</span></p>
               <a href="#" class="vise" onclick="showPopup(${i})" data-bs-toggle="modal" data-bs-target="#vidivisemodal" data-bs-whatever="@getbootstrap">... vidi više</a>
@@ -171,7 +171,7 @@
 
     // Get the data from the corresponding card
     var naslov = document.getElementById("nam" + index).textContent;
-    var tekst = document.getElementById("pri" + index).textContent;
+    var tekst = document.getElementById("prii" + index).textContent;
     var slika = document.getElementById("cardslika" + index).getAttribute("src");
 
     // Set the data in the popup

@@ -91,18 +91,20 @@ app.post('/submitmail', (req, res) => {
 
 app.post('/post', (req, res) => {
     //trenutni datum koji ide na kartice
-    var currentDate = new Date();
-    var day = String(currentDate.getDate()).padStart(2, '0');
-    var month = String(currentDate.getMonth() + 1).padStart(2, '0');
-    var year = currentDate.getFullYear();
-    var formattedDate = day + '.' + month + '.' + year + '.';
-
+    const currentDate = new Date();
+    //var day = String(currentDate.getDate()).padStart(2, '0');
+    //var month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    //var year = currentDate.getFullYear();
+    //var formattedDate = day + '.' + month + '.' + year + '.';
+    //
+    //
+    //const dateString = currentDate.toString()
 
     const formData = {
       naslov: req.body.naslov,
       slika: req.body.slika,
       tekst: req.body.tekst,
-      datum: formattedDate
+      datum: currentDate.toLocaleDateString("hr")
     };
   
     // const sql = `INSERT INTO vijesti_db (datum) VALUES ('${currentDate}')`;
