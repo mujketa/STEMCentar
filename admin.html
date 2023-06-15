@@ -153,7 +153,7 @@
               <p class="card-text"><span id="prii${i}">${data[i].tekst}</span></p>
               <a href="#" class="vise" onclick="showPopup(${i})" data-bs-toggle="modal" data-bs-target="#vidivisemodal" data-bs-whatever="@getbootstrap">... vidi više</a>
               <div class="dugmad">
-                <button type="button" onclick="showPopupEdit(${i})" class="submit-btn btn btn-outline-dark btn-lg add-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
+                <button type="button" onclick="showPopupEdit(${i})" class="submit-btn btn btn-outline-dark btn-lg add-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Uredi</button>
                 <button id="brisi" onclick="deleteCard(${data[i].id_vijesti})" type="submit" class="submit-btn btn btn-outline-dark btn-lg add-button">Briši</button>
               </div>
               <p class="card-info"><small class="text-muted"><i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>${data[i].datum}</small></p>
@@ -212,28 +212,6 @@
 
     
   </div>
-<!-- </div> -->
-<!-- -------------------------------------------------------------------------------------------------------------    -->
-
-
-  <!-- <h1>Contact Form</h1>
-
-  <form action="http://localhost:5000/submitmail" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <input type="submit" value="Submit">
-  </form> -->
-
-
-<!-- -------------------------------------------------------------------------------------------------------------    -->
-
 
 <!-- Footer -->
 <footer class="text-center text-white" style="background-image: url('images/pozadinafooter.png'); background-size: cover; height: 18rem; background-repeat: no-repeat; align-content: end;">
