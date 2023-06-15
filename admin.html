@@ -67,7 +67,7 @@
             <textarea type="text" rows="3" class="form-control" id="poljetekst" name="tekst" required></textarea>
           </div>
           <div class="modal-footer">
-            <button type="submit" onclick="alert('Uspješno dodano, osvježite stranicu')" class="btn btn-outline-light">Submit</button>
+            <button type="submit" onclick="alert('Uspješno dodano'), osvjeziStranicu()" class="btn btn-outline-light">Submit</button>
           </div>
       </form>        
   </div>
@@ -95,6 +95,45 @@
     </div>
   </div>
 </div>
+
+
+<!--MODAL FORMA ZA IZMJENU-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Uredi vijest</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="col-form-label">Id:</label>
+            <input type="text" class="form-control" id="card-id" disabled>
+          </div>
+          <div class="mb-3">
+            <label class="col-form-label">Naslov:</label>
+            <input type="text" class="form-control"  id="card-naslov" >
+          </div>
+          <div class="mb-3">
+            <label  class="col-form-label">Slika:</label>
+            <input type="text" class="form-control"  id="card-slika" >
+          </div>
+          <div class="mb-3">
+              <label class="col-form-label">Tekst:</label>
+              <input type="text" class="form-control"  id="card-tekst" >
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="editCards(),alert('Uspješno dodano'), osvjeziStranicu()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- -------------------------------------------------------------------------------------------------------------- -->
 <script>
   async function getData() {
@@ -109,11 +148,12 @@
           <div class="card">
             <img id="cardslika${i}" class="card-img-top" src="${data[i].slika}" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title"><span id="nam${i}">${data[i].naslov}</span></h5>
-              <p class="card-text"><span id="pri${i}">${data[i].tekst}</span></p>
+              <p class="card-text"><span id="pri${i}">${data[i].id_vijesti}</span></p>
+              <h5 class="card-title"><span id="nam${i}">${data[i].naslov}</span></h5> 
+              <p class="card-text"><span id="prii${i}">${data[i].tekst}</span></p>
               <a href="#" class="vise" onclick="showPopup(${i})" data-bs-toggle="modal" data-bs-target="#vidivisemodal" data-bs-whatever="@getbootstrap">... vidi više</a>
               <div class="dugmad">
-                <button type="button" onclick="fillEditData(${data[i].id_vijesti})" class="submit-btn btn btn-outline-dark btn-lg add-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
+                <button type="button" onclick="showPopupEdit(${i})" class="submit-btn btn btn-outline-dark btn-lg add-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
                 <button id="brisi" onclick="deleteCard(${data[i].id_vijesti})" type="submit" class="submit-btn btn btn-outline-dark btn-lg add-button">Briši</button>
               </div>
               <p class="card-info"><small class="text-muted"><i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>${data[i].datum}</small></p>
@@ -141,6 +181,30 @@
       <p>${tekst}</p>
     `;
   }
+
+  function showPopupEdit(index) {
+    var id = document.getElementById("card-id");
+    var naslov = document.getElementById("card-naslov");
+    var slika = document.getElementById("card-slika");
+    var tekst = document.getElementById("card-tekst");
+
+    // Get the data from the corresponding card
+    var idd = document.getElementById("pri" + index).textContent;
+    var naslovv = document.getElementById("nam" + index).textContent;
+    var tekstt = document.getElementById("prii" + index).textContent;
+    var slikaa = document.getElementById("cardslika" + index).getAttribute("src");
+
+    // Set the data in the popup
+    id.value = `${idd}`;
+
+    naslov.value = `${naslovv}`;
+
+    slika.value = `${slikaa}`;
+
+    tekst.value = `${tekstt}`;
+    console.log(idd);
+  }
+  
 </script>
 
     </div>
@@ -169,61 +233,6 @@
 
 
 <!-- -------------------------------------------------------------------------------------------------------------    -->
-
- <!--MODAL FORMA ZA IZMJENU-->
-
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Uredi vijest</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="card-id" class="col-form-label">Id:</label>
-            <input type="text" class="form-control" id="card-id" disabled>
-          </div>
-          <div class="mb-3">
-            <label class="col-form-label">Naslov:</label>
-            <input type="text" class="form-control"  id="card-naslov" >
-          </div>
-          <div class="mb-3">
-            <label  class="col-form-label">Slika:</label>
-            <input type="text" class="form-control"  id="card-slika" >
-          </div>
-          <div class="mb-3">
-              <label class="col-form-label">Tekst:</label>
-              <input type="text" class="form-control"  id="card-tekst" >
-            </div>
-        </form>
-        <!-- <form>
-          <div class="mb-3">
-              <label for="food-id" class="col-form-label">Id:</label>
-              <input type="text" class="form-control" id="food-id" disabled>
-            </div>
-          <div class="mb-3">
-            <label for="food-name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="food-name">
-          </div>
-          <div class="mb-3">
-            <label for="food-image" class="col-form-label">Image:</label>
-            <input type="text" class="form-control" id="food-image">
-          </div>
-          <div class="mb-3">
-              <label for="food-price" class="col-form-label">Price:</label>
-              <input type="number" class="form-control" id="food-price">
-            </div>
-        </form> -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="editCards(6)">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- Footer -->
