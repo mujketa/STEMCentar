@@ -5,9 +5,6 @@ const bodyParser = require ("body-parser");
 const mysql = require ("mysql2");
 const cors = require ("cors");
 
-//TODOOOOOOOO
-//napravit hotmail
-//provjerit radil mail jer sam zakomentariso
 
 const db = mysql.createPool({ //cd C:\Users\pc\Documents\GitHub\STEMCentar\server
     host: "localhost",
@@ -40,14 +37,14 @@ app.post('/submitmail', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
-      user: 'hamzamujkan@hotmail.com',
-      pass: '12345678',
+      user: 'input.centar@hotmail.com',
+      pass: 'input12345',
     },
   });
 
   // Define the email content
   const mailOptions = {
-    from: 'hamzamujkan@hotmail.com',
+    from: 'input.centar@hotmail.com',
     to: 'hamza.mujkanovic.20@size.ba',
     subject: 'Nova prijava na STEM kurs',
     text: `
@@ -66,7 +63,6 @@ app.post('/submitmail', (req, res) => {
       res.status(500).send('Error sending email');
     } else {
       console.log('Email sent:', info.response);
-      res.send('Form submitted successfully');
     }
   });
 });
@@ -106,7 +102,7 @@ app.post('/post', (req, res) => {
       naslov: req.body.naslov,
       slika: req.body.slika,
       tekst: req.body.tekst,
-      // datum: formattedDate
+      datum: formattedDate
     };
   
     // const sql = `INSERT INTO vijesti_db (datum) VALUES ('${currentDate}')`;

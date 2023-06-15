@@ -244,30 +244,6 @@ type();
     `;
   }
         </script>
-<!-- -------------------------------------------------------------------------------------------------------------    -->
-  <!-- Forma za POST -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <div class="center  col-lg-5 col-sm-9">
-          <button id="close" type="button" class="btn-close" style="float: right;" aria-label="Close"></button>
-          <form action="http://localhost:5000/post" method="POST">
-            <div class="mb-3">
-              <label class="col-form-label">Naslov:</label>
-              <input type="text" class="form-control" name="naslov" required>
-            </div>
-            <div class="mb-3">
-              <label  class="col-form-label">Slika:</label>
-              <input type="text" class="form-control" name="slika" required>
-            </div>
-            <div class="mb-3">
-                <label class="col-form-label">Tekst:</label>
-                <input type="text" class="form-control" name="tekst" required>
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-outline-light">Submit</button>
-              </div>
-          </form>        
-      </div> -->
-<!-- -------------------------------------------------------------------------------------------------------------    -->
     </div>
   </div>
 <!-- </div> -->
@@ -386,7 +362,7 @@ type();
                         </div>
 
                         <div class="col-md-12 mt-3">
-                            <label id="uzrast" class="mb-3 mr-1" for="age">Uzrast: </label>
+                            <label id="uzrast" class="mb-3 mr-1">Uzrast: </label>
 
                             <input type="radio" class="btn-check" name="age" value="do 12 godina" id="male" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="male">do 12 godina</label>
@@ -405,26 +381,11 @@ type();
                       <div class="invalid-feedback">Molimo potvrdite da su svi podaci tačni!</div>
                     </div>
                         <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="submit-btn btn btn-outline-light btn-lg add-button">Prijavi se</button>
+                            <button id="submit" type="submit" onclick="alert('Hvala Vam na prijavi, uspješno ste se prijavili na STEM KURS'), osvjeziStranicu()" class="submit-btn btn btn-outline-light btn-lg add-button" >Prijavi se</button>
                         </div>
                     </form>
                 </div>
-  
 
-  <!-- <h1>Contact Form</h1>
-
-  <form action="http://localhost:5000/submitmail" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <input type="submit" value="Submit">
-  </form> -->
 
 </section>
 <!-- -------------------------------------------------------------------------------------------------------------    -->
@@ -492,6 +453,7 @@ type();
 </body>
 
 <script src="./script.js"></script>
+<script src="./card.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
